@@ -66,25 +66,3 @@ struct BackgroundView: View {
             .ignoresSafeArea()
     }
 }
-
-struct BibleQuizButton: View {
-    
-    var title: String
-    var onClick: () -> Void
-    
-    var body: some View {
-        Button{
-            
-            onClick()
-            
-        }label: {
-            Text(title)
-                .frame(width: 280,height: 50)
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke()
-                )
-                .foregroundColor(Color("primary"))
-        }
-    }
-}
