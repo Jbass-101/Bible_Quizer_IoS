@@ -9,9 +9,8 @@ import SwiftUI
 
 struct QuestionScreenView: View {
     var body: some View {
-        ZStack {
+        NavigationView {
             
-            BackgroundView()
             VStack{
                 HStack{
                     Text("Score: 0")
@@ -84,7 +83,10 @@ struct QuestionScreenView: View {
                 }
             }
             .padding()
+            .navigationTitle("Question Screen")
+            .toolbar(.hidden)
         }
+        .navigationBarBackButtonHidden()
     }
 }
 

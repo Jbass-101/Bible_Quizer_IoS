@@ -10,35 +10,35 @@ import SwiftUI
 struct HomeScreenView: View {
     var body: some View {
         
-        VStack{
-            
-            
-            Text("B")
-                .font(Font.custom("LoveYaLikeASister-Regular", size: 200))
-                .foregroundColor(Color("primary"))
-            
-            Spacer()
-            
-            VStack(spacing: 25){
+        NavigationView {
+            VStack{
                 
-                BibleQuizButton(title: "Start") {
-                    print("Start Button")
+                Text("B")
+                    .font(Font.custom("LoveYaLikeASister-Regular", size: 200))
+                    .foregroundColor(Color("primary"))
+                
+                Spacer()
+                
+                VStack(spacing: 25){
+                    
+                    NavigationLink(destination: QuestionScreenView()){
+                        BibleQuizButtonText(title: "Start")
+                    }
+                    
+                    
+                    BibleQuizButton(title: "Quit") {
+                        print("Quit App")
+                    }
                 }
                 
-                BibleQuizButton(title: "Quit") {
-                    print("Quit App")
-                }
+                Spacer()
+                
+                ExtraBrainsLogoImage()
+                
             }
-            
-            Spacer()
-            
-            Image("extrabrains")
-                .renderingMode(.template)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 150, height: 150)
-                .foregroundColor(Color("primary"))
-            
+            .padding()
+            .navigationTitle("Home Screen")
+            .toolbar(.hidden)
         }
         
         
@@ -55,3 +55,14 @@ struct HomeScreenView_Previews: PreviewProvider {
 
 
 
+
+struct ExtraBrainsLogoImage: View {
+    var body: some View {
+        Image("extrabrains")
+            .renderingMode(.template)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 150, height: 150)
+            .foregroundColor(Color("primary"))
+    }
+}
