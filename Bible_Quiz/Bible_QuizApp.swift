@@ -11,7 +11,11 @@ import SwiftUI
 struct Bible_QuizApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ZStack{
+                BackgroundView()
+                HomeScreenView()
+                
+            }
         }
     }
 }

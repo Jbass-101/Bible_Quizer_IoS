@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		AA16C4F62AF41E0500384E03 /* Bible_QuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16C4F52AF41E0500384E03 /* Bible_QuizApp.swift */; };
-		AA16C4F82AF41E0500384E03 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16C4F72AF41E0500384E03 /* ContentView.swift */; };
+		AA16C4F82AF41E0500384E03 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16C4F72AF41E0500384E03 /* HomeScreenView.swift */; };
 		AA16C4FA2AF41E0800384E03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA16C4F92AF41E0800384E03 /* Assets.xcassets */; };
 		AA16C4FD2AF41E0800384E03 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA16C4FC2AF41E0800384E03 /* Preview Assets.xcassets */; };
 		AA16C5072AF41E0900384E03 /* Bible_QuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16C5062AF41E0900384E03 /* Bible_QuizTests.swift */; };
 		AA16C5112AF41E0900384E03 /* Bible_QuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16C5102AF41E0900384E03 /* Bible_QuizUITests.swift */; };
 		AA16C5132AF41E0900384E03 /* Bible_QuizUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16C5122AF41E0900384E03 /* Bible_QuizUITestsLaunchTests.swift */; };
+		AA9AE75F2B42FB1400F81931 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9AE75E2B42FB1400F81931 /* BackgroundView.swift */; };
 		AAA49C602B419962009050C6 /* BibleQuizButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA49C5F2B419962009050C6 /* BibleQuizButton.swift */; };
-		AAA49CE42B41E2CB009050C6 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA49CE32B41E2CB009050C6 /* HomeScreenView.swift */; };
+		AAA49CE42B41E2CB009050C6 /* QuestionScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA49CE32B41E2CB009050C6 /* QuestionScreenView.swift */; };
 		AAF61A052B40BA56006EB00B /* LoveYaLikeASister-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF61A042B40BA56006EB00B /* LoveYaLikeASister-Regular.ttf */; };
 		AAF61A062B40BA56006EB00B /* LoveYaLikeASister-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF61A042B40BA56006EB00B /* LoveYaLikeASister-Regular.ttf */; };
 /* End PBXBuildFile section */
@@ -40,7 +41,7 @@
 /* Begin PBXFileReference section */
 		AA16C4F22AF41E0500384E03 /* Bible_Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bible_Quiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA16C4F52AF41E0500384E03 /* Bible_QuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bible_QuizApp.swift; sourceTree = "<group>"; };
-		AA16C4F72AF41E0500384E03 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AA16C4F72AF41E0500384E03 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		AA16C4F92AF41E0800384E03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA16C4FC2AF41E0800384E03 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AA16C5022AF41E0900384E03 /* Bible_QuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bible_QuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,8 +49,9 @@
 		AA16C50C2AF41E0900384E03 /* Bible_QuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bible_QuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA16C5102AF41E0900384E03 /* Bible_QuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bible_QuizUITests.swift; sourceTree = "<group>"; };
 		AA16C5122AF41E0900384E03 /* Bible_QuizUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bible_QuizUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AA9AE75E2B42FB1400F81931 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		AAA49C5F2B419962009050C6 /* BibleQuizButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleQuizButton.swift; sourceTree = "<group>"; };
-		AAA49CE32B41E2CB009050C6 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		AAA49CE32B41E2CB009050C6 /* QuestionScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionScreenView.swift; sourceTree = "<group>"; };
 		AAB0404C2B40BCDF0001F3E5 /* Bible-Quiz-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Bible-Quiz-Info.plist"; sourceTree = SOURCE_ROOT; };
 		AAF61A042B40BA56006EB00B /* LoveYaLikeASister-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LoveYaLikeASister-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,7 +108,6 @@
 				AAA49C5D2B41990D009050C6 /* Screens */,
 				AA16C4F52AF41E0500384E03 /* Bible_QuizApp.swift */,
 				AAF61A032B40BA33006EB00B /* font */,
-				AA16C4F72AF41E0500384E03 /* ContentView.swift */,
 				AA16C4F92AF41E0800384E03 /* Assets.xcassets */,
 				AA16C4FB2AF41E0800384E03 /* Preview Content */,
 			);
@@ -141,7 +142,7 @@
 		AAA49C5D2B41990D009050C6 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				AAA49CE22B41E15A009050C6 /* QuesionsScreen */,
+				AAA49CE22B41E15A009050C6 /* QuestionScreen */,
 				AAA49CE12B41E14C009050C6 /* LobbyScreen */,
 				AAA49CE02B41E140009050C6 /* HomeScreen */,
 				AAA49C5E2B41991C009050C6 /* components */,
@@ -153,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				AAA49C5F2B419962009050C6 /* BibleQuizButton.swift */,
+				AA9AE75E2B42FB1400F81931 /* BackgroundView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -160,6 +162,7 @@
 		AAA49CE02B41E140009050C6 /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
+				AA16C4F72AF41E0500384E03 /* HomeScreenView.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -171,12 +174,12 @@
 			path = LobbyScreen;
 			sourceTree = "<group>";
 		};
-		AAA49CE22B41E15A009050C6 /* QuesionsScreen */ = {
+		AAA49CE22B41E15A009050C6 /* QuestionScreen */ = {
 			isa = PBXGroup;
 			children = (
-				AAA49CE32B41E2CB009050C6 /* HomeScreenView.swift */,
+				AAA49CE32B41E2CB009050C6 /* QuestionScreenView.swift */,
 			);
-			path = QuesionsScreen;
+			path = QuestionScreen;
 			sourceTree = "<group>";
 		};
 		AAF61A032B40BA33006EB00B /* font */ = {
@@ -319,10 +322,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA16C4F82AF41E0500384E03 /* ContentView.swift in Sources */,
+				AA9AE75F2B42FB1400F81931 /* BackgroundView.swift in Sources */,
+				AA16C4F82AF41E0500384E03 /* HomeScreenView.swift in Sources */,
 				AA16C4F62AF41E0500384E03 /* Bible_QuizApp.swift in Sources */,
 				AAA49C602B419962009050C6 /* BibleQuizButton.swift in Sources */,
-				AAA49CE42B41E2CB009050C6 /* HomeScreenView.swift in Sources */,
+				AAA49CE42B41E2CB009050C6 /* QuestionScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

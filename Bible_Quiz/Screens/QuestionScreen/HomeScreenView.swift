@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomeScreenView: View {
+struct QuestionScreenView: View {
     var body: some View {
         VStack{
             HStack{
@@ -54,8 +54,8 @@ struct HomeScreenView: View {
             
             HStack{
                 
-                    BibleQuizButton(title: "Answer 1", defaultWidth: 150, onClick: {})
-                BibleQuizButton(title: "Answer 1", defaultWidth: 150, onClick: {})
+                    BibleQuizButton(title: "Quit", defaultWidth: 150, onClick: {})
+                BibleQuizButton(title: "Next", defaultWidth: 150, onClick: {})
             }
         }
     }
@@ -63,6 +63,6 @@ struct HomeScreenView: View {
 
 struct HomeScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeScreenView()
+        QuestionScreenView()
     }
 }
