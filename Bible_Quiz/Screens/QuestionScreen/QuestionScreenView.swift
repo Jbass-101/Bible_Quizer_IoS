@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct QuestionScreenView: View {
+    
+    @Environment(\.dismiss) private var popScreen
+    @State private var showConfirmationDialog = false
+    
     var body: some View {
-        NavigationView {
+        NavigationStack {
             
             VStack{
                 HStack{
@@ -77,7 +81,12 @@ struct QuestionScreenView: View {
                 
                 HStack{
                     
-                    BibleQuizButton(title: "Quit", maxWidth: 150, onClick: {})
+                    BibleQuizButton(title: "Quit", maxWidth: 150, onClick: {showConfirmationDialog.toggle()})
+                        .alert("Quit", isPresented: $showConfirmationDialog, actions: {
+                            Button(action: {}, label: {Text("Continue")})
+                            Button(action: {popScreen()}, label: {Text("Quit Quiz")})
+                            
+                        }, message: {Text("Are you sure?")})
                     Spacer()
                     BibleQuizButton(title: "Next", maxWidth: 150, onClick: {})
                 }
