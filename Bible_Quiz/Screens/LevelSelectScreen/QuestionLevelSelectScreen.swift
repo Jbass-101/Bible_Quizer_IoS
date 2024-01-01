@@ -42,7 +42,7 @@ struct QuestionLevelSelectScreen: View {
                     Text("Toggle Disable")
                 })
                 
-                NavigationLink(destination: QuestionScreenView(), label: {Text("Go to Questions")})
+                NavigationLink(destination: QuestionScreenView(question: Question.sample), label: {Text("Go to Questions")})
                 
                 BibleQuizButton(title: "Home", onClick: {
                     popScreen()

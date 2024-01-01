@@ -12,6 +12,10 @@ struct QuestionScreenView: View {
     @Environment(\.dismiss) private var popScreen
     @State private var showConfirmationDialog = false
     
+    
+    var question: Question
+    
+    
     var body: some View {
         NavigationStack {
             
@@ -35,7 +39,7 @@ struct QuestionScreenView: View {
                 }
                 
                 
-                Text("This is a sample question")
+                Text(question.question)
                     .font(.title3)
                     .foregroundColor(Color("onContainer"))
                     .frame(maxWidth: .infinity, maxHeight: 250)
@@ -64,17 +68,21 @@ struct QuestionScreenView: View {
                     
                     
                     
-                    Text("This is the hint")
+                    Text(question.hint)
                     
                 }
                 
                 Spacer()
                 
                 VStack(spacing: 25){
-                    BibleQuizButton(title: "Answer 1", onClick: {})
-                    BibleQuizButton(title: "Answer 2", onClick: {})
-                    BibleQuizButton(title: "Answer 3", onClick: {})
-                    BibleQuizButton(title: "Answer 4", onClick: {})
+                    
+                    ForEach(question.options, id :\.self){option in
+                        
+                        BibleQuizButton(title: option, onClick: {})
+                        
+                    }
+                    
+                    
                 }
                 
                 Spacer()
@@ -101,6 +109,6 @@ struct QuestionScreenView: View {
 
 struct QuestionScreen_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionScreenView()
+        QuestionScreenView(question: Question.sample)
     }
 }
