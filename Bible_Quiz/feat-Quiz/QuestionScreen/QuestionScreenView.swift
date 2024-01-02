@@ -10,13 +10,17 @@ import SwiftUI
 struct QuestionScreenView: View {
     
     @Environment(\.dismiss) private var popScreen
+    
+    
     @State private var showConfirmationDialog = false
     
     
+    @ObservedObject var vm : QuestionScreenVM
     var question: Question
     
     
     var body: some View {
+        
         NavigationStack {
             
             VStack{
@@ -24,7 +28,7 @@ struct QuestionScreenView: View {
                     Text("Score: 0")
                         .font(.body)
                     Spacer()
-                    Text("Question: 1/15 ")
+                    Text("Question: \(vm.currentQuestion + 1)/15 ")
                     Spacer()
                     Text("Hints : 5")
                 }
@@ -96,7 +100,9 @@ struct QuestionScreenView: View {
                             
                         }, message: {Text("Are you sure?")})
                     Spacer()
-                    BibleQuizButton(title: "Next", maxWidth: 150, onClick: {})
+                    BibleQuizButton(
+                        title: vm.currentQuestion < 14 ? "Next" : "Finish" , maxWidth: 150,
+                        onClick: {vm.nextQuestion()})
                 }
             }
             .padding()
@@ -109,6 +115,6 @@ struct QuestionScreenView: View {
 
 struct QuestionScreen_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionScreenView(question: Question.sample)
+        QuestionScreenView(vm: QuestionScreenVM(),question: Question.sample)
     }
 }

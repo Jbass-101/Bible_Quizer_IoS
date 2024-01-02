@@ -10,6 +10,7 @@ import SwiftUI
 struct QuestionLevelSelectScreen: View {
     
     @Environment(\.dismiss) private var popScreen
+    @StateObject private var vm = QuestionScreenVM()
     
     @State private var btnDisabled = false
     
@@ -42,7 +43,7 @@ struct QuestionLevelSelectScreen: View {
                     Text("Toggle Disable")
                 })
                 
-                NavigationLink(destination: QuestionScreenView(question: Question.sample), label: {Text("Go to Questions")})
+                NavigationLink(destination: QuestionScreenView(vm: vm,question: vm.questions[vm.currentQuestion]), label: {Text("Go to Questions")})
                 
                 BibleQuizButton(title: "Home", onClick: {
                     popScreen()
