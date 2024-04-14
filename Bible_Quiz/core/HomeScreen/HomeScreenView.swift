@@ -13,15 +13,18 @@ struct HomeScreenView: View {
         NavigationStack {
             VStack{
                 
-                Text("B")
-                    .font(Font.custom("LoveYaLikeASister-Regular", size: 200))
-                    .foregroundColor(Color("primary"))
+                    Image("quizlogo")
+                        .renderingMode(.template)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 250, height: 250)
+                        .foregroundColor(Color("primary"))
                 
                 Spacer()
                 
                 VStack(spacing: 25){
                     
-                    NavigationLink(destination: QuestionLevelSelectScreen()){
+                    NavigationLink(destination: LevelScreen()){
                         BibleQuizButtonText(title: "Start")
                     }
                     
