@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct QuestionScreenView: View {
+struct QuizScreenView: View {
     
     @Environment(\.dismiss) private var popScreen
     
@@ -15,8 +15,8 @@ struct QuestionScreenView: View {
     @State private var showConfirmationDialog = false
     
     
-    @ObservedObject var vm : QuestionScreenVM
-    var question: Question
+    @ObservedObject var vm : QuizVM
+    var question: Quiz
     
     
     var body: some View {
@@ -115,6 +115,6 @@ struct QuestionScreenView: View {
 
 struct QuestionScreen_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionScreenView(vm: QuestionScreenVM(),question: Question.sample)
+        QuizScreenView(vm: QuizVM(),question: Quiz.sample)
     }
 }

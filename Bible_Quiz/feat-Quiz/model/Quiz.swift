@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Question {
+struct Quiz {
     var id: Int
     var question: String
     var answer: String
@@ -17,9 +17,9 @@ struct Question {
     
 }
 
-extension Question {
+extension Quiz {
     
-    static var mockData: [Question] = [
+    static var mockData: [Quiz] = [
         .init(
             id: 1,
             question:
@@ -177,7 +177,7 @@ extension Question {
     
     static var sample = mockData[0]
     
-    static var mockDataAll: [[Question]] = [
+    static var mockDataAll: [[Quiz]] = [
         [
             .init(
                 id: 1,
