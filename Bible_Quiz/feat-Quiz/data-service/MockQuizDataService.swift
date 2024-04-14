@@ -14,11 +14,11 @@ class MockQuizDataService : QuizRepo {
     }
     
     func getAllQuestions() {
-        <#code#>
+        
     }
     
     func getQuestionsByLevel(level: String) {
-        <#code#>
+        
     }
     
     
