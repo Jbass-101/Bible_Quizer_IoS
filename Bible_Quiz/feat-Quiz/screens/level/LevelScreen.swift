@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct QuestionLevelSelectScreen: View {
+struct LevelScreen: View {
     
     @Environment(\.dismiss) private var popScreen
-    @StateObject private var vm = QuestionScreenVM()
+    @StateObject private var vm = QuizVM()
     
     @State private var btnDisabled = false
     
@@ -22,19 +22,9 @@ struct QuestionLevelSelectScreen: View {
             VStack {
                 ScrollView{
                     LazyVGrid(columns: columns){
-                        ForEach(1..<21){ level in
+                        ForEach(0..<20){ level in
                             
-                            
-                            Button(action : {}){
-                                Text("Level \(level)")
-                                    .foregroundColor(Color("onPrimary"))
-                                    .frame(width: 160, height: 50)
-                                    .background(btnDisabled ? .gray : Color("primary"))
-                                    .cornerRadius(10)
-                            }
-                            .disabled(btnDisabled)
-                            
-                            
+                            NavigationLink(destination: QuizScreen(level: level), label: {LevelSelectButton(level: level, disabled: false) })
                         }
                     }
                 }
@@ -43,7 +33,7 @@ struct QuestionLevelSelectScreen: View {
                     Text("Toggle Disable")
                 })
                 
-                NavigationLink(destination: QuestionScreenView(vm: vm,question: vm.questions[vm.currentQuestion]), label: {Text("Go to Questions")})
+                NavigationLink(destination: QuizScreenView(vm: vm,question: vm.questions[vm.currentQuestion]), label: {Text("Go to Questions")})
                 
                 BibleQuizButton(title: "Home", onClick: {
                     popScreen()
@@ -59,6 +49,6 @@ struct QuestionLevelSelectScreen: View {
 
 struct QuestionLevelSelectScreen_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionLevelSelectScreen()
+        LevelScreen()
     }
 }
