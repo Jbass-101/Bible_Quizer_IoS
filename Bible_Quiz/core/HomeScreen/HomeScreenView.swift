@@ -27,8 +27,7 @@ struct HomeScreenView: View {
                     NavigationLink(destination: LevelScreen()){
                         BibleQuizButtonText(title: "Start")
                     }
-                    
-                    AuthView()
+
                     
                     BibleQuizButton(title: "Quit") {
                         print("Quit App")

@@ -9,27 +9,24 @@ import SwiftUI
 
 @MainActor
 final class AuthViewModel: ObservableObject {
+    
     @Published var email = ""
     @Published var password = ""
     
-    func signInWithEmail(){
+    func signInWithEmail() async throws {
         guard !email.isEmpty, !password.isEmpty else {
             print("No Email or password found")
             return
         }
         
-        Task {
-            do {
-                let userData = try await AuthDataService.shared.createUserByEmail(email: email, password: password)
-                print(userData)
-            }catch{
-                print("Error \(error)")
-            }
-        }
+            let userData = try await AuthDataService.shared.createUserByEmail(email: email, password: password)
+            print(userData)
     }
 }
 
 struct SignInEmailView: View {
+    
+    @Binding var showSignInView: Bool
     
     @StateObject private var vm = AuthViewModel()
     var body: some View {
@@ -45,7 +42,16 @@ struct SignInEmailView: View {
                 .cornerRadius(10)
             
             Button{
-                vm.signInWithEmail()
+                Task {
+                    do{
+                        
+                        try await vm.signInWithEmail()
+                        showSignInView = false
+                        
+                    }catch{
+                        print("Error: \(error)")
+                    }
+                }
                 
             }label: {
                 Text("Sign In")
@@ -69,7 +75,7 @@ struct SignInEmailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
             
-                SignInEmailView()
+            SignInEmailView(showSignInView: .constant(false))
         }
     }
 }

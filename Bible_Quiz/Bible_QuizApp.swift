@@ -23,6 +23,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
       """
       )
       Auth.auth().useEmulator(withHost: "192.168.0.195", port: 9090)
+      let settings = Fire
 #elseif DEBUG
       print(
       """

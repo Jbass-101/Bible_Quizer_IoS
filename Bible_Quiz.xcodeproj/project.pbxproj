@@ -44,6 +44,8 @@
 		AAA49CE42B41E2CB009050C6 /* QuizScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA49CE32B41E2CB009050C6 /* QuizScreenView.swift */; };
 		AAB922202BD3EB5900C68531 /* AuthRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB9221F2BD3EB5900C68531 /* AuthRootView.swift */; };
 		AAB922252BD3EEB600C68531 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB922242BD3EEB600C68531 /* SettingsView.swift */; };
+		AAB922282BD400B400C68531 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AAB922272BD400B400C68531 /* FirebaseFirestore */; };
+		AAB9222A2BD400B400C68531 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AAB922292BD400B400C68531 /* FirebaseFirestoreSwift */; };
 		AAF61A052B40BA56006EB00B /* LoveYaLikeASister-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF61A042B40BA56006EB00B /* LoveYaLikeASister-Regular.ttf */; };
 		AAF61A062B40BA56006EB00B /* LoveYaLikeASister-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF61A042B40BA56006EB00B /* LoveYaLikeASister-Regular.ttf */; };
 		AAFA118B2BCC433A009FD387 /* QuizScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFA118A2BCC433A009FD387 /* QuizScreen.swift */; };
@@ -104,7 +106,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAB9222A2BD400B400C68531 /* FirebaseFirestoreSwift in Frameworks */,
 				AA1D02492BD3CD6700BE784D /* FirebaseAnalyticsSwift in Frameworks */,
+				AAB922282BD400B400C68531 /* FirebaseFirestore in Frameworks */,
 				AA1D024B2BD3CD6700BE784D /* FirebaseAuth in Frameworks */,
 				AA1D02472BD3CD6700BE784D /* FirebaseAnalytics in Frameworks */,
 			);
@@ -134,6 +138,7 @@
 				AA16C5052AF41E0900384E03 /* Bible_QuizTests */,
 				AA16C50F2AF41E0900384E03 /* Bible_QuizUITests */,
 				AA16C4F32AF41E0500384E03 /* Products */,
+				AAB922262BD400B400C68531 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -331,6 +336,13 @@
 			path = SettingsScreen;
 			sourceTree = "<group>";
 		};
+		AAB922262BD400B400C68531 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AAF61A032B40BA33006EB00B /* font */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,6 +379,8 @@
 				AA1D02462BD3CD6700BE784D /* FirebaseAnalytics */,
 				AA1D02482BD3CD6700BE784D /* FirebaseAnalyticsSwift */,
 				AA1D024A2BD3CD6700BE784D /* FirebaseAuth */,
+				AAB922272BD400B400C68531 /* FirebaseFirestore */,
+				AAB922292BD400B400C68531 /* FirebaseFirestoreSwift */,
 			);
 			productName = Bible_Quiz;
 			productReference = AA16C4F22AF41E0500384E03 /* Bible_Quiz.app */;
@@ -997,6 +1011,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AA1D02452BD3CD6700BE784D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		AAB922272BD400B400C68531 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA1D02452BD3CD6700BE784D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		AAB922292BD400B400C68531 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA1D02452BD3CD6700BE784D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
