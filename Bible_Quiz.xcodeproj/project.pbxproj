@@ -42,6 +42,8 @@
 		AA9AE75F2B42FB1400F81931 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9AE75E2B42FB1400F81931 /* BackgroundView.swift */; };
 		AAA49C602B419962009050C6 /* BibleQuizButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA49C5F2B419962009050C6 /* BibleQuizButton.swift */; };
 		AAA49CE42B41E2CB009050C6 /* QuizScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA49CE32B41E2CB009050C6 /* QuizScreenView.swift */; };
+		AAB922202BD3EB5900C68531 /* AuthRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB9221F2BD3EB5900C68531 /* AuthRootView.swift */; };
+		AAB922252BD3EEB600C68531 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB922242BD3EEB600C68531 /* SettingsView.swift */; };
 		AAF61A052B40BA56006EB00B /* LoveYaLikeASister-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF61A042B40BA56006EB00B /* LoveYaLikeASister-Regular.ttf */; };
 		AAF61A062B40BA56006EB00B /* LoveYaLikeASister-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF61A042B40BA56006EB00B /* LoveYaLikeASister-Regular.ttf */; };
 		AAFA118B2BCC433A009FD387 /* QuizScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFA118A2BCC433A009FD387 /* QuizScreen.swift */; };
@@ -91,6 +93,8 @@
 		AAA49C5F2B419962009050C6 /* BibleQuizButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleQuizButton.swift; sourceTree = "<group>"; };
 		AAA49CE32B41E2CB009050C6 /* QuizScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScreenView.swift; sourceTree = "<group>"; };
 		AAB0404C2B40BCDF0001F3E5 /* Bible-Quiz-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Bible-Quiz-Info.plist"; sourceTree = SOURCE_ROOT; };
+		AAB9221F2BD3EB5900C68531 /* AuthRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRootView.swift; sourceTree = "<group>"; };
+		AAB922242BD3EEB600C68531 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AAF61A042B40BA56006EB00B /* LoveYaLikeASister-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LoveYaLikeASister-Regular.ttf"; sourceTree = "<group>"; };
 		AAFA118A2BCC433A009FD387 /* QuizScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,6 +219,7 @@
 			children = (
 				AA1D02682BD3DFC600BE784D /* SignInEmailView.swift */,
 				AA1D02642BD3DE7300BE784D /* AuthView.swift */,
+				AAB9221F2BD3EB5900C68531 /* AuthRootView.swift */,
 			);
 			path = sceens;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 		AAA49C5D2B41990D009050C6 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				AAB922212BD3EE5300C68531 /* SettingsScreen */,
 				AAA49CE12B41E14C009050C6 /* LobbyScreen */,
 				AAA49CE02B41E140009050C6 /* HomeScreen */,
 				AAA49C5E2B41991C009050C6 /* components */,
@@ -315,6 +321,14 @@
 				AAFA118A2BCC433A009FD387 /* QuizScreen.swift */,
 			);
 			path = quiz;
+			sourceTree = "<group>";
+		};
+		AAB922212BD3EE5300C68531 /* SettingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				AAB922242BD3EEB600C68531 /* SettingsView.swift */,
+			);
+			path = SettingsScreen;
 			sourceTree = "<group>";
 		};
 		AAF61A032B40BA33006EB00B /* font */ = {
@@ -490,9 +504,11 @@
 				AA2F42192B4334010040C9A9 /* LevelSelectButton.swift in Sources */,
 				AAA49CE42B41E2CB009050C6 /* QuizScreenView.swift in Sources */,
 				AA57BD052B4475E6006CB058 /* QuizRepo.swift in Sources */,
+				AAB922202BD3EB5900C68531 /* AuthRootView.swift in Sources */,
 				AA1D02542BD3D00D00BE784D /* UserModel.swift in Sources */,
 				AA1D02652BD3DE7300BE784D /* AuthView.swift in Sources */,
 				AA1D024F2BD3CF4700BE784D /* AuthDataService.swift in Sources */,
+				AAB922252BD3EEB600C68531 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

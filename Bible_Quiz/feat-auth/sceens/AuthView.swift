@@ -22,8 +22,6 @@ struct AuthView: View {
                     .cornerRadius(10)
             }
             
-            Spacer()
-            
         }
         .padding()
         .navigationTitle("Sign In")
