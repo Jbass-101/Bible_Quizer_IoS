@@ -26,6 +26,10 @@ final class AuthDataService {
         return UserModel(user: result.user)
     }
     
+    func signOut() throws {
+        try Auth.auth().signOut()
+    }
+    
 }
 
 

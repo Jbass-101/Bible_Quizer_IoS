@@ -47,7 +47,8 @@ struct Bible_QuizApp: App {
         WindowGroup {
             ZStack{
                 BackgroundView()
-                HomeScreenView()
+//                HomeScreenView()
+                AuthRootView()
                 
             }
         }
