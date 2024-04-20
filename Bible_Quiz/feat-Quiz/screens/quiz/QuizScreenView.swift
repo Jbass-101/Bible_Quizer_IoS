@@ -10,16 +10,25 @@ import SwiftUI
 struct QuizScreenView: View {
     
     @Environment(\.dismiss) private var popScreen
-    
-    
     @State private var showConfirmationDialog = false
     
     
-    @ObservedObject var vm : QuizVM
-    var question: Quiz
+//    @ObservedObject var vm : QuizVM
+//    var question: Quiz
+    
+    
+    var uiState: QuizUiState
+    var onNext: () -> Void
+    var answerQuestion: (_ ans: String, _ option: String) -> Void
+    var showHint: () -> Void
+    var updateTimer: () -> Void
+//    var timer: Publishers.Autoconnect<Timer.TimerPublisher>
+    
     
     
     var body: some View {
+        
+        let quiz = uiState.questions[uiState.currentQuestion]
         
         NavigationStack {
             
@@ -28,7 +37,7 @@ struct QuizScreenView: View {
                     Text("Score: 0")
                         .font(.body)
                     Spacer()
-                    Text("Question: \(vm.currentQuestion + 1)/15 ")
+                    Text("Question: \(uiState.currentQuestion + 1)/15 ")
                     Spacer()
                     Text("Hints : 5")
                 }
@@ -43,7 +52,7 @@ struct QuizScreenView: View {
                 }
                 
                 
-                Text(question.question)
+                Text(quiz.question)
                     .font(.title3)
                     .foregroundColor(Color("onContainer"))
                     .frame(maxWidth: .infinity, maxHeight: 250)
@@ -72,7 +81,7 @@ struct QuizScreenView: View {
                     
                     
                     
-                    Text(question.hint)
+                    Text(quiz.hint)
                     
                 }
                 
@@ -80,7 +89,7 @@ struct QuizScreenView: View {
                 
                 VStack(spacing: 25){
                     
-                    ForEach(question.options, id :\.self){option in
+                    ForEach(quiz.options, id :\.self){option in
                         
                         BibleQuizButton(title: option, onClick: {})
                         
@@ -101,8 +110,8 @@ struct QuizScreenView: View {
                         }, message: {Text("Are you sure?")})
                     Spacer()
                     BibleQuizButton(
-                        title: vm.currentQuestion < 14 ? "Next" : "Finish" , maxWidth: 150,
-                        onClick: {vm.nextQuestion()})
+                        title: uiState.currentQuestion < 14 ? "Next" : "Finish" , maxWidth: 150,
+                        onClick: onNext)
                 }
             }
             .padding()
@@ -114,7 +123,19 @@ struct QuizScreenView: View {
 }
 
 struct QuestionScreen_Previews: PreviewProvider {
+    
+    static var quiz: [Quiz] = Quiz.mockData
+    
+    static var quizUiState = QuizUiState(questions: quiz, currentQuestion: 0)
     static var previews: some View {
-        QuizScreenView(vm: QuizVM(),question: Quiz.sample)
-    }
+        //        QuizScreenView(quiz: quiz)
+                QuizScreenView(
+                    uiState: quizUiState,
+                    onNext: {},
+                answerQuestion: {a, b in},
+                    showHint: {},
+                    updateTimer: {self.quizUiState.progress -= 1}
+//                    ,
+//                    timer: Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+                )}
 }
