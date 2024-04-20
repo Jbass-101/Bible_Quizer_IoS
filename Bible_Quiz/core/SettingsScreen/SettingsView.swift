@@ -12,6 +12,10 @@ final class SettingsViewModel: ObservableObject {
     func signOut() throws {
         try AuthDataService.shared.signOut()
     }
+    
+    func deleteAccount() async throws{
+        try await AuthDataService.shared.delete()
+    }
 }
 
 struct SettingsView: View {
@@ -30,6 +34,20 @@ struct SettingsView: View {
                         print(error)
                     }
                 }
+            }
+            
+            Button(role: .destructive){
+                Task {
+                    do{
+                        try await vm.deleteAccount()
+                        showSignInView = true
+                    }catch{
+                        print(error)
+                    }
+                }
+                
+            }label: {
+                Text("Delete Account")
             }
         }
         .navigationTitle("Settings")
