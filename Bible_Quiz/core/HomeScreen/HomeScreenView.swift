@@ -28,6 +28,7 @@ struct HomeScreenView: View {
                         BibleQuizButtonText(title: "Start")
                     }
                     
+                    AuthView()
                     
                     BibleQuizButton(title: "Quit") {
                         print("Quit App")
