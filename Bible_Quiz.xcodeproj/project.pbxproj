@@ -20,9 +20,6 @@
 		AA1D024F2BD3CF4700BE784D /* AuthDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D024E2BD3CF4700BE784D /* AuthDataService.swift */; };
 		AA1D02502BD3CF4700BE784D /* AuthDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D024E2BD3CF4700BE784D /* AuthDataService.swift */; };
 		AA1D02512BD3CF4700BE784D /* AuthDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D024E2BD3CF4700BE784D /* AuthDataService.swift */; };
-		AA1D02542BD3D00D00BE784D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D02532BD3D00D00BE784D /* UserModel.swift */; };
-		AA1D02552BD3D00D00BE784D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D02532BD3D00D00BE784D /* UserModel.swift */; };
-		AA1D02562BD3D00D00BE784D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D02532BD3D00D00BE784D /* UserModel.swift */; };
 		AA1D02612BD3D93F00BE784D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA1D02602BD3D93F00BE784D /* GoogleService-Info.plist */; };
 		AA1D02622BD3D93F00BE784D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA1D02602BD3D93F00BE784D /* GoogleService-Info.plist */; };
 		AA1D02632BD3D93F00BE784D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA1D02602BD3D93F00BE784D /* GoogleService-Info.plist */; };
@@ -39,6 +36,10 @@
 		AA57BCB62B44354B006CB058 /* QuizVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA57BCB52B44354B006CB058 /* QuizVM.swift */; };
 		AA57BD052B4475E6006CB058 /* QuizRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA57BD042B4475E6006CB058 /* QuizRepo.swift */; };
 		AA57BD072B447742006CB058 /* MockQuizDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA57BD062B447742006CB058 /* MockQuizDataService.swift */; };
+		AA974CB72BD5789B00069BDB /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974CB62BD5789B00069BDB /* UserDataService.swift */; };
+		AA974CBA2BD5929900069BDB /* MainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974CB92BD5929900069BDB /* MainVM.swift */; };
+		AA974CBD2BD5953200069BDB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974CBC2BD5953200069BDB /* UserModel.swift */; };
+		AA974CC02BD59DA600069BDB /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974CBF2BD59DA600069BDB /* MainScreen.swift */; };
 		AA9AE75F2B42FB1400F81931 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9AE75E2B42FB1400F81931 /* BackgroundView.swift */; };
 		AAA49C602B419962009050C6 /* BibleQuizButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA49C5F2B419962009050C6 /* BibleQuizButton.swift */; };
 		AAA49CE42B41E2CB009050C6 /* QuizScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA49CE32B41E2CB009050C6 /* QuizScreenView.swift */; };
@@ -46,6 +47,11 @@
 		AAB922252BD3EEB600C68531 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB922242BD3EEB600C68531 /* SettingsView.swift */; };
 		AAB922282BD400B400C68531 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AAB922272BD400B400C68531 /* FirebaseFirestore */; };
 		AAB9222A2BD400B400C68531 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AAB922292BD400B400C68531 /* FirebaseFirestoreSwift */; };
+		AAB9222E2BD403CF00C68531 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB9222D2BD403CF00C68531 /* ProfileView.swift */; };
+		AAB922302BD4217F00C68531 /* LoadUserDataScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB9222F2BD4217F00C68531 /* LoadUserDataScreen.swift */; };
+		AAB922362BD42FFB00C68531 /* QuizDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB922352BD42FFB00C68531 /* QuizDataService.swift */; };
+		AAB922372BD42FFB00C68531 /* QuizDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB922352BD42FFB00C68531 /* QuizDataService.swift */; };
+		AAB922382BD42FFB00C68531 /* QuizDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB922352BD42FFB00C68531 /* QuizDataService.swift */; };
 		AAF61A052B40BA56006EB00B /* LoveYaLikeASister-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF61A042B40BA56006EB00B /* LoveYaLikeASister-Regular.ttf */; };
 		AAF61A062B40BA56006EB00B /* LoveYaLikeASister-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF61A042B40BA56006EB00B /* LoveYaLikeASister-Regular.ttf */; };
 		AAFA118B2BCC433A009FD387 /* QuizScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFA118A2BCC433A009FD387 /* QuizScreen.swift */; };
@@ -80,7 +86,6 @@
 		AA16C5102AF41E0900384E03 /* Bible_QuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bible_QuizUITests.swift; sourceTree = "<group>"; };
 		AA16C5122AF41E0900384E03 /* Bible_QuizUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bible_QuizUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AA1D024E2BD3CF4700BE784D /* AuthDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataService.swift; sourceTree = "<group>"; };
-		AA1D02532BD3D00D00BE784D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		AA1D02602BD3D93F00BE784D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AA1D02642BD3DE7300BE784D /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		AA1D02682BD3DFC600BE784D /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
@@ -91,12 +96,19 @@
 		AA57BCB52B44354B006CB058 /* QuizVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVM.swift; sourceTree = "<group>"; };
 		AA57BD042B4475E6006CB058 /* QuizRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRepo.swift; sourceTree = "<group>"; };
 		AA57BD062B447742006CB058 /* MockQuizDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockQuizDataService.swift; sourceTree = "<group>"; };
+		AA974CB62BD5789B00069BDB /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		AA974CB92BD5929900069BDB /* MainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVM.swift; sourceTree = "<group>"; };
+		AA974CBC2BD5953200069BDB /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		AA974CBF2BD59DA600069BDB /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		AA9AE75E2B42FB1400F81931 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		AAA49C5F2B419962009050C6 /* BibleQuizButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleQuizButton.swift; sourceTree = "<group>"; };
 		AAA49CE32B41E2CB009050C6 /* QuizScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScreenView.swift; sourceTree = "<group>"; };
 		AAB0404C2B40BCDF0001F3E5 /* Bible-Quiz-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Bible-Quiz-Info.plist"; sourceTree = SOURCE_ROOT; };
 		AAB9221F2BD3EB5900C68531 /* AuthRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRootView.swift; sourceTree = "<group>"; };
 		AAB922242BD3EEB600C68531 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AAB9222D2BD403CF00C68531 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		AAB9222F2BD4217F00C68531 /* LoadUserDataScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadUserDataScreen.swift; sourceTree = "<group>"; };
+		AAB922352BD42FFB00C68531 /* QuizDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDataService.swift; sourceTree = "<group>"; };
 		AAF61A042B40BA56006EB00B /* LoveYaLikeASister-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LoveYaLikeASister-Regular.ttf"; sourceTree = "<group>"; };
 		AAFA118A2BCC433A009FD387 /* QuizScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +171,7 @@
 				AAB0404C2B40BCDF0001F3E5 /* Bible-Quiz-Info.plist */,
 				AAA49C5D2B41990D009050C6 /* core */,
 				AA1D024C2BD3CE7100BE784D /* feat-auth */,
+				AAB9222C2BD4039300C68531 /* feat-profile */,
 				AA57BCB72B444AAB006CB058 /* feat-Quiz */,
 				AAF61A032B40BA33006EB00B /* font */,
 				AA16C4F92AF41E0800384E03 /* Assets.xcassets */,
@@ -214,7 +227,6 @@
 		AA1D02522BD3CFF800BE784D /* model */ = {
 			isa = PBXGroup;
 			children = (
-				AA1D02532BD3D00D00BE784D /* UserModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -260,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				AA57BD062B447742006CB058 /* MockQuizDataService.swift */,
+				AAB922352BD42FFB00C68531 /* QuizDataService.swift */,
 			);
 			path = "data-service";
 			sourceTree = "<group>";
@@ -283,9 +296,43 @@
 			path = repository;
 			sourceTree = "<group>";
 		};
+		AA974CB52BD5785300069BDB /* data-service */ = {
+			isa = PBXGroup;
+			children = (
+				AA974CB62BD5789B00069BDB /* UserDataService.swift */,
+			);
+			path = "data-service";
+			sourceTree = "<group>";
+		};
+		AA974CB82BD5928200069BDB /* main */ = {
+			isa = PBXGroup;
+			children = (
+				AA974CBE2BD59D7C00069BDB /* screen */,
+				AA974CB92BD5929900069BDB /* MainVM.swift */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		AA974CBB2BD5951B00069BDB /* model */ = {
+			isa = PBXGroup;
+			children = (
+				AA974CBC2BD5953200069BDB /* UserModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		AA974CBE2BD59D7C00069BDB /* screen */ = {
+			isa = PBXGroup;
+			children = (
+				AA974CBF2BD59DA600069BDB /* MainScreen.swift */,
+			);
+			path = screen;
+			sourceTree = "<group>";
+		};
 		AAA49C5D2B41990D009050C6 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				AA974CB82BD5928200069BDB /* main */,
 				AAB922212BD3EE5300C68531 /* SettingsScreen */,
 				AAA49CE12B41E14C009050C6 /* LobbyScreen */,
 				AAA49CE02B41E140009050C6 /* HomeScreen */,
@@ -343,6 +390,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AAB9222C2BD4039300C68531 /* feat-profile */ = {
+			isa = PBXGroup;
+			children = (
+				AA974CBB2BD5951B00069BDB /* model */,
+				AAB9222D2BD403CF00C68531 /* ProfileView.swift */,
+				AA974CB52BD5785300069BDB /* data-service */,
+			);
+			path = "feat-profile";
+			sourceTree = "<group>";
+		};
 		AAF61A032B40BA33006EB00B /* font */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				AA2F42182B4334010040C9A9 /* LevelSelectButton.swift */,
+				AAB9222F2BD4217F00C68531 /* LoadUserDataScreen.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -507,21 +565,27 @@
 				AA9AE75F2B42FB1400F81931 /* BackgroundView.swift in Sources */,
 				AA16C4F82AF41E0500384E03 /* HomeScreenView.swift in Sources */,
 				AA57BD072B447742006CB058 /* MockQuizDataService.swift in Sources */,
+				AAB922302BD4217F00C68531 /* LoadUserDataScreen.swift in Sources */,
 				AAFA118B2BCC433A009FD387 /* QuizScreen.swift in Sources */,
 				AA16C4F62AF41E0500384E03 /* Bible_QuizApp.swift in Sources */,
 				AA52BF692B436F6600FCBC12 /* Quiz.swift in Sources */,
+				AA974CBA2BD5929900069BDB /* MainVM.swift in Sources */,
+				AA974CBD2BD5953200069BDB /* UserModel.swift in Sources */,
 				AA57BCB62B44354B006CB058 /* QuizVM.swift in Sources */,
 				AA1D02692BD3DFC600BE784D /* SignInEmailView.swift in Sources */,
+				AA974CB72BD5789B00069BDB /* UserDataService.swift in Sources */,
+				AA974CC02BD59DA600069BDB /* MainScreen.swift in Sources */,
 				AAA49C602B419962009050C6 /* BibleQuizButton.swift in Sources */,
 				AA2F42142B432CEB0040C9A9 /* BibleQuizButtonText.swift in Sources */,
 				AA2F42172B4331570040C9A9 /* LevelScreen.swift in Sources */,
 				AA2F42192B4334010040C9A9 /* LevelSelectButton.swift in Sources */,
+				AAB9222E2BD403CF00C68531 /* ProfileView.swift in Sources */,
 				AAA49CE42B41E2CB009050C6 /* QuizScreenView.swift in Sources */,
 				AA57BD052B4475E6006CB058 /* QuizRepo.swift in Sources */,
 				AAB922202BD3EB5900C68531 /* AuthRootView.swift in Sources */,
-				AA1D02542BD3D00D00BE784D /* UserModel.swift in Sources */,
 				AA1D02652BD3DE7300BE784D /* AuthView.swift in Sources */,
 				AA1D024F2BD3CF4700BE784D /* AuthDataService.swift in Sources */,
+				AAB922362BD42FFB00C68531 /* QuizDataService.swift in Sources */,
 				AAB922252BD3EEB600C68531 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,8 +596,8 @@
 			files = (
 				AA16C5072AF41E0900384E03 /* Bible_QuizTests.swift in Sources */,
 				AA1D026A2BD3DFC600BE784D /* SignInEmailView.swift in Sources */,
+				AAB922372BD42FFB00C68531 /* QuizDataService.swift in Sources */,
 				AA1D02662BD3DE7300BE784D /* AuthView.swift in Sources */,
-				AA1D02552BD3D00D00BE784D /* UserModel.swift in Sources */,
 				AA1D02502BD3CF4700BE784D /* AuthDataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,9 +607,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA16C5132AF41E0900384E03 /* Bible_QuizUITestsLaunchTests.swift in Sources */,
+				AAB922382BD42FFB00C68531 /* QuizDataService.swift in Sources */,
 				AA16C5112AF41E0900384E03 /* Bible_QuizUITests.swift in Sources */,
 				AA1D02672BD3DE7300BE784D /* AuthView.swift in Sources */,
-				AA1D02562BD3D00D00BE784D /* UserModel.swift in Sources */,
 				AA1D02512BD3CF4700BE784D /* AuthDataService.swift in Sources */,
 				AA1D026B2BD3DFC600BE784D /* SignInEmailView.swift in Sources */,
 			);
@@ -693,6 +757,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bible-Quiz-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.trivia-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -723,6 +788,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bible-Quiz-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.trivia-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -886,6 +952,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bible-Quiz-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.trivia-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -990,8 +1057,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				kind = exactVersion;
+				version = 10.24.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

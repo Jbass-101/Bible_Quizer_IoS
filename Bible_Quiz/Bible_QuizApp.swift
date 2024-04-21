@@ -12,6 +12,8 @@ import FirebaseFirestore
 //import FirebaseFirestoreSwift
 
 class AppDelegate: NSObject, UIApplicationDelegate {
+    
+    private let emulatorIP = "10.10.92.97"
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     FirebaseApp.configure()
@@ -24,9 +26,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
       ********************************
       """
       )
-      Auth.auth().useEmulator(withHost: "192.168.0.195", port: 9090)
+      Auth.auth().useEmulator(withHost: emulatorIP, port: 9090)
       let settings = Firestore.firestore().settings
-      settings.host = "192.168.0.195:9091"
+      settings.host = "\(emulatorIP):9091"
       settings.isPersistenceEnabled = false
       settings.isSSLEnabled = false
       Firestore.firestore().settings = settings
@@ -55,7 +57,8 @@ struct Bible_QuizApp: App {
             ZStack{
                 BackgroundView()
 //                HomeScreenView()
-                AuthRootView()
+//                AuthRootView()
+                MainScreen()
                 
             }
         }
