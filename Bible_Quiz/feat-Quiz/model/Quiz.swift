@@ -7,13 +7,14 @@
 
 import Foundation
 
-struct Quiz {
-    var id: Int
-    var question: String
-    var answer: String
-    var hint: String
-    var book: String
-    var options: [String]
+
+public struct Quiz: Codable {
+    let id: Int?
+    let question: String
+    let answer: String
+    let hint: String
+    let book: String
+    let options: [String]
     
 }
 
