@@ -21,6 +21,12 @@ final class AuthDataService {
         return UserModel(user: user)
     }
     
+    func signInAnon() async throws {
+        let authDataResult = try await Auth.auth().signInAnonymously()
+        try await UserDataService.shared.createNewUser(user: UserModel(user: authDataResult.user))
+        
+    }
+    
     func createUserByEmail(email: String, password: String) async throws -> UserModel {
         let result = try await Auth.auth().createUser(withEmail: email, password: password)
         return UserModel(user: result.user)
