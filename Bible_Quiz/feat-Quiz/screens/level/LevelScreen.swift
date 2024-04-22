@@ -24,7 +24,7 @@ struct LevelScreen: View {
                     LazyVGrid(columns: columns){
                         ForEach(0..<20){ level in
                             
-                            NavigationLink(destination: QuizScreen(level: level), label: {LevelSelectButton(level: level, disabled: false) })
+                            NavigationLink(destination: QuizScreen(), label: {LevelSelectButton(level: level, disabled: false) })
                         }
                     }
                 }

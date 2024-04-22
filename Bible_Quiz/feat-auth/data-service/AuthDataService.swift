@@ -22,8 +22,16 @@ final class AuthDataService {
     }
     
     func signInAnon() async throws {
-        let authDataResult = try await Auth.auth().signInAnonymously()
-        try await UserDataService.shared.createNewUser(user: UserModel(user: authDataResult.user))
+        
+        do {
+            let authDataResult = try await Auth.auth().signInAnonymously()
+            try await UserDataService.shared.createNewUser(user: UserModel(user: authDataResult.user))
+            
+        }catch {
+            print("Anon Sign in error: \(error)")
+            throw error
+            
+        }
         
     }
     

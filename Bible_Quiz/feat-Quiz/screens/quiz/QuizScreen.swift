@@ -10,37 +10,28 @@ import SwiftUI
 
 struct QuizScreen: View {
     
-    var level: Int
+    @EnvironmentObject var router: QuizNavRouter
     @StateObject private var vm: QuizVM = QuizVM()
+    @State private var currentUser: UserModel?
     
-    init(level: Int) {
-        self.level = level
-    }
+//    init(level: Int) {
+//        self.level = level
+//    }
     
     var body: some View {
         switch vm.state{
-        case .idle: Text("Idle State. . . . . . level: \(level)")
+        case .idle: Text("Idle State. . . . . . ")
             Color.clear.onAppear {
-//            vm.getQuizByLevelS(Level: level)
+                currentUser.self = vm.getAuthUser()
         }
                 
         case .loading:
             Text("Loading. . . . . .")
         case .success:
-            
-            
-                Text("Success. . . . . .")
-//            QuizScreenView(
-//                uiState: vm.uiState,
-//                onNext: {vm.goToNextQuestion()},
-//                answerQuestion: {a, b in
-//                    vm.answerQuestion(option: a, ans: b)
-//                },
-//                showHint: {vm.showHint()},
-//                updateTimer: {vm.updateTimer()},
-//                timer: vm.timer
-//
-//            )
+            Text("Success. . . . . .")
+            Color.clear.onAppear {
+                router.navigate(to: .level)
+        }
             
             
             
@@ -52,7 +43,7 @@ struct QuizScreen: View {
 
 struct QuizScreen_Previews: PreviewProvider {
     static var previews: some View {
-        QuizScreen(level: 0)
+        QuizScreen()
     }
 }
 

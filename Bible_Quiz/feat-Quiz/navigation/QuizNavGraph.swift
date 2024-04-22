@@ -39,7 +39,7 @@ struct QuizNavGraph: View {
     
     var body: some View {
         NavigationStack(path: $router.navPath){
-            LevelScreen()
+            QuizScreen()
                 .navigationDestination(for: QuizNavRouter.Destination.self){ destination in
                     switch destination {
                     case .quiz:

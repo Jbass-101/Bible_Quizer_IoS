@@ -24,7 +24,7 @@ struct HomeScreenView: View {
                 
                 VStack(spacing: 25){
                     
-                    NavigationLink(destination: LevelScreen()){
+                    NavigationLink(destination: QuizScreen()){
                         BibleQuizButtonText(title: "Start")
                     }
 

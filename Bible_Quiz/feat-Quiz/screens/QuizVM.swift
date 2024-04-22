@@ -23,6 +23,8 @@ struct QuizUiState {
 @MainActor class QuizVM: ObservableObject {
     
     
+    
+    
     enum State {
         case idle
         case loading
@@ -40,7 +42,16 @@ struct QuizUiState {
     
     
     
-    
+    func getAuthUser() -> UserModel? {
+        state.self = State.loading
+        do{
+            state.self = State.success
+            return try AuthDataService.shared.getAuthUser()
+        }catch{
+            state.self = State.failure(error)
+            return nil
+        }
+    }
     
     func nextQuestion(){
         if(currentQuestion < 14){

@@ -60,6 +60,7 @@ struct Bible_QuizApp: App {
 //                AuthRootView()
 //                MainScreen()
                 QuizNavGraph()
+//                QuizScreen()
                 
             }
         }

@@ -15,6 +15,14 @@ struct MainScreen: View {
         NavigationStack{
             Text("Main VM......")
             
+            
+            Button("Get Current User"){
+                Task {
+                    
+                        try  vm.getCurrentUser()
+                }
+            }
+            
             Button("Delete User"){
                 Task {
                     
@@ -42,6 +50,16 @@ struct MainScreen: View {
             Task {
                 try await vm.createNewUser()
             }
+            
+        }
+        .alert(item: $vm.mainError){ appAlert in
+            Alert(title: Text("Error"),
+            message: Text(
+                """
+                \(appAlert.errorString)
+                """
+            )
+            )
             
         }
     }

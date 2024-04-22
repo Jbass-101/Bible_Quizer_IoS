@@ -36,11 +36,13 @@
 		AA57BCB62B44354B006CB058 /* QuizVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA57BCB52B44354B006CB058 /* QuizVM.swift */; };
 		AA57BD052B4475E6006CB058 /* QuizRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA57BD042B4475E6006CB058 /* QuizRepo.swift */; };
 		AA57BD072B447742006CB058 /* MockQuizDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA57BD062B447742006CB058 /* MockQuizDataService.swift */; };
+		AA8E6A7E2BD71457006AD241 /* QuizNavGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8E6A7D2BD71457006AD241 /* QuizNavGraph.swift */; };
 		AA974CB72BD5789B00069BDB /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974CB62BD5789B00069BDB /* UserDataService.swift */; };
 		AA974CBA2BD5929900069BDB /* MainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974CB92BD5929900069BDB /* MainVM.swift */; };
 		AA974CBD2BD5953200069BDB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974CBC2BD5953200069BDB /* UserModel.swift */; };
 		AA974CC02BD59DA600069BDB /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA974CBF2BD59DA600069BDB /* MainScreen.swift */; };
 		AA9AE75F2B42FB1400F81931 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9AE75E2B42FB1400F81931 /* BackgroundView.swift */; };
+		AA9E9A622BD6CA01003EA02E /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9E9A612BD6CA01003EA02E /* AppError.swift */; };
 		AAA49C602B419962009050C6 /* BibleQuizButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA49C5F2B419962009050C6 /* BibleQuizButton.swift */; };
 		AAA49CE42B41E2CB009050C6 /* QuizScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA49CE32B41E2CB009050C6 /* QuizScreenView.swift */; };
 		AAB922202BD3EB5900C68531 /* AuthRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB9221F2BD3EB5900C68531 /* AuthRootView.swift */; };
@@ -96,11 +98,13 @@
 		AA57BCB52B44354B006CB058 /* QuizVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVM.swift; sourceTree = "<group>"; };
 		AA57BD042B4475E6006CB058 /* QuizRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRepo.swift; sourceTree = "<group>"; };
 		AA57BD062B447742006CB058 /* MockQuizDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockQuizDataService.swift; sourceTree = "<group>"; };
+		AA8E6A7D2BD71457006AD241 /* QuizNavGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizNavGraph.swift; sourceTree = "<group>"; };
 		AA974CB62BD5789B00069BDB /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		AA974CB92BD5929900069BDB /* MainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVM.swift; sourceTree = "<group>"; };
 		AA974CBC2BD5953200069BDB /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		AA974CBF2BD59DA600069BDB /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		AA9AE75E2B42FB1400F81931 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		AA9E9A612BD6CA01003EA02E /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		AAA49C5F2B419962009050C6 /* BibleQuizButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleQuizButton.swift; sourceTree = "<group>"; };
 		AAA49CE32B41E2CB009050C6 /* QuizScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScreenView.swift; sourceTree = "<group>"; };
 		AAB0404C2B40BCDF0001F3E5 /* Bible-Quiz-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Bible-Quiz-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -260,6 +264,7 @@
 		AA57BCB72B444AAB006CB058 /* feat-Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				AA8E6A7A2BD7130C006AD241 /* navigation */,
 				AA57BD032B44758E006CB058 /* repository */,
 				AA57BD012B4473F9006CB058 /* data-service */,
 				AA52BF672B436F4E00FCBC12 /* model */,
@@ -296,6 +301,14 @@
 			path = repository;
 			sourceTree = "<group>";
 		};
+		AA8E6A7A2BD7130C006AD241 /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				AA8E6A7D2BD71457006AD241 /* QuizNavGraph.swift */,
+			);
+			path = navigation;
+			sourceTree = "<group>";
+		};
 		AA974CB52BD5785300069BDB /* data-service */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +320,7 @@
 		AA974CB82BD5928200069BDB /* main */ = {
 			isa = PBXGroup;
 			children = (
+				AA9E9A602BD6C9EC003EA02E /* model */,
 				AA974CBE2BD59D7C00069BDB /* screen */,
 				AA974CB92BD5929900069BDB /* MainVM.swift */,
 			);
@@ -327,6 +341,14 @@
 				AA974CBF2BD59DA600069BDB /* MainScreen.swift */,
 			);
 			path = screen;
+			sourceTree = "<group>";
+		};
+		AA9E9A602BD6C9EC003EA02E /* model */ = {
+			isa = PBXGroup;
+			children = (
+				AA9E9A612BD6CA01003EA02E /* AppError.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		AAA49C5D2B41990D009050C6 /* core */ = {
@@ -566,12 +588,14 @@
 				AA16C4F82AF41E0500384E03 /* HomeScreenView.swift in Sources */,
 				AA57BD072B447742006CB058 /* MockQuizDataService.swift in Sources */,
 				AAB922302BD4217F00C68531 /* LoadUserDataScreen.swift in Sources */,
+				AA9E9A622BD6CA01003EA02E /* AppError.swift in Sources */,
 				AAFA118B2BCC433A009FD387 /* QuizScreen.swift in Sources */,
 				AA16C4F62AF41E0500384E03 /* Bible_QuizApp.swift in Sources */,
 				AA52BF692B436F6600FCBC12 /* Quiz.swift in Sources */,
 				AA974CBA2BD5929900069BDB /* MainVM.swift in Sources */,
 				AA974CBD2BD5953200069BDB /* UserModel.swift in Sources */,
 				AA57BCB62B44354B006CB058 /* QuizVM.swift in Sources */,
+				AA8E6A7E2BD71457006AD241 /* QuizNavGraph.swift in Sources */,
 				AA1D02692BD3DFC600BE784D /* SignInEmailView.swift in Sources */,
 				AA974CB72BD5789B00069BDB /* UserDataService.swift in Sources */,
 				AA974CC02BD59DA600069BDB /* MainScreen.swift in Sources */,

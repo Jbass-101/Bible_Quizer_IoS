@@ -20,4 +20,9 @@ final class UserDataService{
         try  db.collection("Users").document(user.id).setData(from: user)
         
     }
+    
+    func getUserData(userID: String) async throws -> UserModel {
+        try await db.collection("Users").document(userID).getDocument(as: UserModel.self)
+        
+    }
 }
