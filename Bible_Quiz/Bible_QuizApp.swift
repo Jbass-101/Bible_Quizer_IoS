@@ -29,7 +29,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
       Auth.auth().useEmulator(withHost: emulatorIP, port: 9090)
       let settings = Firestore.firestore().settings
       settings.host = "\(emulatorIP):9091"
-      settings.isPersistenceEnabled = false
+      settings.cacheSettings = MemoryCacheSettings()
       settings.isSSLEnabled = false
       Firestore.firestore().settings = settings
 #elseif DEBUG
@@ -58,7 +58,8 @@ struct Bible_QuizApp: App {
                 BackgroundView()
 //                HomeScreenView()
 //                AuthRootView()
-                MainScreen()
+//                MainScreen()
+                QuizNavGraph()
                 
             }
         }

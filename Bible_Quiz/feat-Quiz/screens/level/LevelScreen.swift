@@ -40,10 +40,10 @@ struct LevelScreen: View {
                 })
             }
             .padding()
-        .navigationTitle("Select A Level")
-        .navigationBarTitleDisplayMode(.inline)
         }
         .navigationBarBackButtonHidden()
+        .navigationTitle("Select A Level")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
