@@ -57,9 +57,10 @@ struct Bible_QuizApp: App {
             ZStack{
                 BackgroundView()
 //                HomeScreenView()
+                MainNavGraph()
 //                AuthRootView()
 //                MainScreen()
-                QuizNavGraph()
+//                QuizNavGraph()
 //                QuizScreen()
                 
             }

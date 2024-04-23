@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeScreenView: View {
     var body: some View {
         
-        NavigationStack {
+            
             VStack{
                 
                     Image("quizlogo")
@@ -24,9 +24,11 @@ struct HomeScreenView: View {
                 
                 VStack(spacing: 25){
                     
-                    NavigationLink(destination: QuizScreen()){
-                        BibleQuizButtonText(title: "Start")
-                    }
+                    NavigationLink("Start", value: MainDestination.quiz)
+                    
+//                    NavigationLink(destination: QuizNavGraph()){
+//                        BibleQuizButtonText(title: "Start")
+//                    }
 
                     
                     BibleQuizButton(title: "Quit") {
@@ -43,12 +45,7 @@ struct HomeScreenView: View {
             .navigationTitle("Home Screen")
             .toolbar(.hidden)
         }
-        .navigationBarBackButtonHidden()
         
-        
-        
-        
-    }
 }
 
 struct HomeScreenView_Previews: PreviewProvider {

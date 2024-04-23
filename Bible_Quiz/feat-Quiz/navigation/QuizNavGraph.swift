@@ -8,6 +8,15 @@
 import Foundation
 import SwiftUI
 
+
+
+public enum QuizDestination: Hashable {
+    case level
+    case quiz
+    case score
+//        case bedroom(owner: String)
+}
+
 final class QuizNavRouter: ObservableObject {
     
     public enum Destination: Codable, Hashable {
@@ -21,6 +30,7 @@ final class QuizNavRouter: ObservableObject {
     
     func navigate(to destination: Destination) {
         navPath.append(destination)
+        
     }
     
     func navigateBack() {
@@ -35,43 +45,31 @@ final class QuizNavRouter: ObservableObject {
 
 struct QuizNavGraph: View {
     
-    @ObservedObject var router = QuizNavRouter()
+    
+    
+    @Binding var path: NavigationPath
     
     var body: some View {
-        NavigationStack(path: $router.navPath){
-            QuizScreen()
-                .navigationDestination(for: QuizNavRouter.Destination.self){ destination in
-                    switch destination {
-                    case .quiz:
-                        VStack{
-                            
-                            Text("Quiz Screen")
-                            Button("Navigate to quiz screen"){
-                                router.navigate(to: .quiz)
-                            }
-                            
-                        }
-                    case .score:
-                        VStack{
-                            
-                            Text("Score Screen")
-                            Button("Navigate to quiz screen"){
-                                router.navigate(to: .score)
-                            }
-                            
-                        }
-                    case .level:
-                        Text("Level")
+        
+        VStack{
+            QuizScreen(path: $path)
+                .navigationDestination(for: QuizDestination.self){ quizDestination in
+                    switch quizDestination{
+                    case .score : Text("Score Screen")
+                    case.level : Text("level Screen")
+                    case.quiz : Text("Quiz Screen")
                     }
                     
                 }
+        }
+        
+        
             
-        }.environmentObject(router)
     }
 }
 
 struct QuizNavGraph_Previews: PreviewProvider {
     static var previews: some View {
-        QuizNavGraph()
+        QuizNavGraph(path: .constant(NavigationPath()))
     }
 }

@@ -42,15 +42,20 @@ struct QuizUiState {
     
     
     
+    
     func getAuthUser() -> UserModel? {
-        state.self = State.loading
+        state = State.loading
         do{
-            state.self = State.success
+            state = State.success
+//            state = .idle
             return try AuthDataService.shared.getAuthUser()
+            
+            
         }catch{
-            state.self = State.failure(error)
+            state = State.failure(error)
             return nil
         }
+        
     }
     
     func nextQuestion(){
