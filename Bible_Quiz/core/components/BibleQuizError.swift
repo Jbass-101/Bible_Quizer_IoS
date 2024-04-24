@@ -25,7 +25,7 @@ struct BibleQuizError: View {
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.gray)
+//        .background(.gray)
 //        .opacity(0.7)
     }
 }
