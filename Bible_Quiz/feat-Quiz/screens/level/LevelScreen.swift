@@ -10,40 +10,66 @@ import SwiftUI
 struct LevelScreen: View {
     
     @Environment(\.dismiss) private var popScreen
-    @StateObject private var vm = QuizVM()
+    @StateObject private var vm = QuizLevelVM()
     
     @State private var btnDisabled = false
+    @State private var isLoading = true
     
     
     let columns: [GridItem] = [GridItem(.flexible()),GridItem(.flexible())]
     
     var body: some View {
-        NavigationStack{
+        
+        ZStack {
+            
             VStack {
-                ScrollView{
-                    LazyVGrid(columns: columns){
-                        ForEach(0..<20){ level in
-                            
-//                            NavigationLink(destination: QuizScreen(), label: {LevelSelectButton(level: level, disabled: false) })
+                
+                    ScrollView{
+                        LazyVGrid(columns: columns){
+                            ForEach(0..<20){ level in
+                                
+                                NavigationLink(destination: Text("Hello"), label: {LevelSelectButton(level: level, disabled: false) })
+                            }
                         }
                     }
+                    
+                    Button(action: {self.btnDisabled.toggle()}, label: {
+                        Text("Toggle Disable")
+                    })
+                    
+    //                NavigationLink(destination: QuizScreenView(vm: vm,question: vm.questions[vm.currentQuestion]), label: {Text("Go to Questions")})
+                    
+                    BibleQuizButton(title: "Home", onClick: {
+                        popScreen()
+                    })
                 }
-                
-                Button(action: {self.btnDisabled.toggle()}, label: {
-                    Text("Toggle Disable")
-                })
-                
-//                NavigationLink(destination: QuizScreenView(vm: vm,question: vm.questions[vm.currentQuestion]), label: {Text("Go to Questions")})
-                
-                BibleQuizButton(title: "Home", onClick: {
-                    popScreen()
-                })
-            }
-            .padding()
-        }
-        .navigationBarBackButtonHidden()
-        .navigationTitle("Select A Level")
+                .padding()
+                .disabled(vm.isLoading)
+            
+            .navigationBarBackButtonHidden()
+            .navigationTitle("Select A Level")
         .navigationBarTitleDisplayMode(.inline)
+            
+            switch vm.state {
+            case .loading :
+                BibleQuizLoading()
+                    .onAppear{
+                        Task{
+                            await vm.getUserData()
+                        }
+                    }
+            case .success:
+                EmptyView()
+            case .failure(let errorString):
+                BibleQuizError(errorString: errorString){
+                    popScreen()
+                }
+            }
+            
+            
+        
+        
+        }
     }
 }
 
