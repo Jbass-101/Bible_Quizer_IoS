@@ -43,12 +43,17 @@ struct QuizUiState {
     
     
     
-    func getAuthUser() -> UserModel? {
+    func getAuthUser() async ->  UserModel? {
         state = State.loading
         do{
-            state = State.success
 //            state = .idle
-            return try AuthDataService.shared.getAuthUser()
+            let user =  try AuthDataService.shared.getAuthUser()
+            
+            let userData = try await UserDataService.shared.getUserData(userID: user.id)
+            
+            
+            state = State.success
+            return userData
             
             
         }catch{

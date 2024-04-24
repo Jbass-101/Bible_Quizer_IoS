@@ -24,11 +24,26 @@ struct HomeScreenView: View {
                 
                 VStack(spacing: 25){
                     
-                    NavigationLink("Start", value: MainDestination.quiz)
+                    NavigationLink("Start", value: MainDestination.quizGraph)
                     
 //                    NavigationLink(destination: QuizNavGraph()){
 //                        BibleQuizButtonText(title: "Start")
 //                    }
+                    
+                    Button("Login Anon"){
+                        Task{
+                            
+                            try await AuthDataService.shared.signInAnon()
+                            
+                        }
+                    }
+                    Button("Sign Out User"){
+                        Task{
+                            
+                            try AuthDataService.shared.signOut()
+                            
+                        }
+                    }
 
                     
                     BibleQuizButton(title: "Quit") {

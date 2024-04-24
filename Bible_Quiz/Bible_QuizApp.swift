@@ -58,12 +58,20 @@ struct Bible_QuizApp: App {
                 BackgroundView()
 //                HomeScreenView()
                 MainNavGraph()
+                    
 //                AuthRootView()
 //                MainScreen()
 //                QuizNavGraph()
 //                QuizScreen()
                 
+            }.onAppear{
+                Task{
+                    let currentUser = try AuthDataService.shared.getAuthUser()
+                    print("This is the current user: \(currentUser.id)")
+                }
             }
         }
+        
+        
     }
 }

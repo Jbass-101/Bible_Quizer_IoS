@@ -15,6 +15,7 @@ final class AuthDataService {
     
     func getAuthUser() throws -> UserModel {
         guard let user = Auth.auth().currentUser else {
+            print("No USER ERROR")
             throw URLError(.badServerResponse)
         }
         
@@ -22,6 +23,8 @@ final class AuthDataService {
     }
     
     func signInAnon() async throws {
+        
+        print("Sign In anon")
         
         do {
             let authDataResult = try await Auth.auth().signInAnonymously()

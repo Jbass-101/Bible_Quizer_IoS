@@ -52,11 +52,12 @@ struct QuizNavGraph: View {
     var body: some View {
         
         VStack{
-            QuizScreen(path: $path)
+//            QuizScreen(path: $path)
+            LevelScreen()
                 .navigationDestination(for: QuizDestination.self){ quizDestination in
                     switch quizDestination{
                     case .score : Text("Score Screen")
-                    case.level : Text("level Screen")
+                    case.level : LevelScreen()
                     case.quiz : Text("Quiz Screen")
                     }
                     

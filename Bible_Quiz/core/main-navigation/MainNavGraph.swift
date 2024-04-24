@@ -9,7 +9,7 @@ import SwiftUI
 
 
 public enum MainDestination: Hashable {
-    case quiz
+    case quizGraph
     case settings
 //        case bedroom(owner: String)
 }
@@ -23,7 +23,7 @@ struct MainNavGraph: View {
             HomeScreenView()
                 .navigationDestination(for: MainDestination.self){ mainDestination in
                     switch mainDestination{
-                    case .quiz : QuizNavGraph(path: $path)
+                    case .quizGraph : QuizNavGraph(path: $path)
                     case .settings : Text("Settings Screen")
                     }
                     

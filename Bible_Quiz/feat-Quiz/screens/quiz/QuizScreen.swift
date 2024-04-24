@@ -25,15 +25,20 @@ struct QuizScreen: View {
             switch vm.state{
             case .idle: Text("Idle State. . . . . . ")
                 Color.clear.onAppear {
-                    currentUser.self = vm.getAuthUser()
+                    Task {
+                        
+                        currentUser.self = await vm.getAuthUser()
+                        
+                    }
             }
 
             case .loading:
+                ProgressView()
                 Text("Loading. . . . . .")
             case .success:
                 
-//                Text("Success. . . . . .")
-                Color.clear.onAppear {
+                ProgressView()
+                    .onAppear {
                     path.append(QuizDestination.level)
             }
 
