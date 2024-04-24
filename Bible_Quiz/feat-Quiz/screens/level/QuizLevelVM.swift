@@ -20,7 +20,7 @@ import Foundation
     
     @Published private (set) var state = State.loading
     @Published private (set) var isLoading = true
-    @Published private (set) var userData: UserModel?
+    @Published private (set) var levelUnlocked: [Int] = [5,7,9]
     
     func getUserData() async {
         do{
@@ -28,7 +28,8 @@ import Foundation
             let userData = try await UserDataService.shared.getUserData(userID: currentUser.id)
             
             print("This is the results: \(userData)")
-            self.userData = userData
+            print("This is the number of levels unlocked: \(userData.quizScore.count)")
+            self.levelUnlocked = userData.quizScore
             self.state = State.success
             self.isLoading = false
             

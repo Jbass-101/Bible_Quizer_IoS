@@ -15,7 +15,7 @@ struct UserModel: Codable {
     let surname: String?
     let email: String?
     let displayImage: String?
-    let quizScore: [Int]?
+    let quizScore: [Int]
     
     init(user: User){
         self.id = user.uid
