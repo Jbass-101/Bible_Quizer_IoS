@@ -10,8 +10,11 @@ import SwiftUI
 
 struct BibleQuizError: View {
     
+    
+    @Environment(\.dismiss) private var popScreen
+    
     var errorString: String
-    var onDismiss: () -> Void
+//    var onDismiss: () -> Void
     
     var body: some View {
         VStack{
@@ -20,7 +23,7 @@ struct BibleQuizError: View {
                 .foregroundColor(.red)
             
             BibleQuizButton(title: "Home", onClick: {
-                onDismiss()
+                popScreen()
             })
         }
         .padding()
@@ -32,8 +35,6 @@ struct BibleQuizError: View {
 
 struct BibleQuizError_Previews: PreviewProvider {
     static var previews: some View {
-        BibleQuizError(errorString: "This is the error String"){
-            
-        }
+        BibleQuizError(errorString: "This is the error String")
     }
 }

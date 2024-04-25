@@ -12,12 +12,6 @@ struct LevelScreen: View {
     @Environment(\.dismiss) private var popScreen
     @StateObject private var vm = QuizLevelVM()
     
-    @State private var btnDisabled = false
-    @State private var isLoading = true
-    
-    
-    let columns: [GridItem] = [GridItem(.flexible()),GridItem(.flexible())]
-    
     var body: some View {
         
         ZStack {
@@ -40,9 +34,7 @@ struct LevelScreen: View {
             case .success:
                 EmptyView()
             case .failure(let errorString):
-                BibleQuizError(errorString: errorString){
-                    popScreen()
-                }
+                BibleQuizError(errorString: errorString)
             }
         }
     }
