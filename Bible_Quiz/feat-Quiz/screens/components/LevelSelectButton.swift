@@ -7,11 +7,14 @@
 
 import SwiftUI
 
+
 struct LevelSelectButton: View {
     
     var level: Int
-    var disabled : Bool
-    
+    var score: Int
+    var rating: Int {
+        return Int(floor(Double(((score / 15) * 5))))
+    }
     
     var body: some View {
         VStack{
@@ -22,12 +25,12 @@ struct LevelSelectButton: View {
                 .cornerRadius(10)
             HStack{
                 
-                ForEach(0..<3, id: \.self){ level in
+                ForEach(0..<rating, id: \.self){ level in
                     Image(systemName: "star.fill")
                         .foregroundColor(Color("star"))
                 }
                 
-                ForEach(3..<5, id: \.self){ level in
+                ForEach(rating..<5, id: \.self){ level in
                     Image(systemName: "star")
                         .foregroundColor(Color("star"))
                 }
@@ -40,6 +43,6 @@ struct LevelSelectButton: View {
 
 struct LevelSelectButton_Previews: PreviewProvider {
     static var previews: some View {
-        LevelSelectButton(level: 0, disabled: false)
+        LevelSelectButton(level: 0, score: 5)
     }
 }
