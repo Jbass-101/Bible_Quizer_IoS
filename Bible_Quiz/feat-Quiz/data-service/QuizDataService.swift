@@ -18,7 +18,7 @@ final class QuizDataService {
     func getAllQuestions(level: Int) async throws -> [Quiz] {
         var questions : [Quiz] = []
         
-        let snapshots = try await db.collection("Questions").document("Level").collection("level_\(level)").getDocuments()
+        let snapshots = try await db.collection("Questions").document("Level").collection("level_\(level + 1)").getDocuments()
         
         for document in snapshots.documents {
             questions.append(try document.data(as: Quiz.self))

@@ -23,7 +23,7 @@ struct LevelScreenContents: View {
                         
                         ForEach(0..<score.count, id: \.self){ level in
                             
-                            NavigationLink(destination: Text("Hello"), label: {LevelSelectButton(level: level, score: score[level]) })
+                            NavigationLink(destination: QuizScreen(quizLevel: level), label: {LevelSelectButton(level: level, score: score[level]) })
                         }
                         
                         

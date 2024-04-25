@@ -26,14 +26,14 @@ import Foundation
             let currentUser = try AuthDataService.shared.getAuthUser()
             let userData = try await UserDataService.shared.getUserData(userID: currentUser.id)
             
-            print("This is the results: \(userData)")
-            print("This is the number of levels unlocked: \(userData.quizScore.count)")
+//            print("This is the results: \(userData)")
+//            print("This is the number of levels unlocked: \(userData.quizScore.count)")
             self.levelUnlocked = userData.quizScore
             self.state = State.success
             self.isLoading = false
             
         }catch{
-            print("This is the error: \(error.localizedDescription)")
+//            print("This is the error: \(error.localizedDescription)")
             self.state = State.failure(error.localizedDescription)
             
         }
