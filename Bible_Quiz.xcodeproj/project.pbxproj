@@ -37,6 +37,7 @@
 		AA56811D2BD99BEE00CC5A92 /* BibleQuizLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56811C2BD99BED00CC5A92 /* BibleQuizLoading.swift */; };
 		AA56811F2BD9A89900CC5A92 /* BibleQuizError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56811E2BD9A89900CC5A92 /* BibleQuizError.swift */; };
 		AA5681212BD9AF6700CC5A92 /* LevelSelectDisabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5681202BD9AF6700CC5A92 /* LevelSelectDisabled.swift */; };
+		AA5681242BDAE7E000CC5A92 /* LevelScreenContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5681232BDAE7E000CC5A92 /* LevelScreenContents.swift */; };
 		AA57BCB62B44354B006CB058 /* QuizVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA57BCB52B44354B006CB058 /* QuizVM.swift */; };
 		AA57BD052B4475E6006CB058 /* QuizRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA57BD042B4475E6006CB058 /* QuizRepo.swift */; };
 		AA57BD072B447742006CB058 /* MockQuizDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA57BD062B447742006CB058 /* MockQuizDataService.swift */; };
@@ -103,6 +104,7 @@
 		AA56811C2BD99BED00CC5A92 /* BibleQuizLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleQuizLoading.swift; sourceTree = "<group>"; };
 		AA56811E2BD9A89900CC5A92 /* BibleQuizError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleQuizError.swift; sourceTree = "<group>"; };
 		AA5681202BD9AF6700CC5A92 /* LevelSelectDisabled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectDisabled.swift; sourceTree = "<group>"; };
+		AA5681232BDAE7E000CC5A92 /* LevelScreenContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelScreenContents.swift; sourceTree = "<group>"; };
 		AA57BCB52B44354B006CB058 /* QuizVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVM.swift; sourceTree = "<group>"; };
 		AA57BD042B4475E6006CB058 /* QuizRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRepo.swift; sourceTree = "<group>"; };
 		AA57BD062B447742006CB058 /* MockQuizDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockQuizDataService.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 		AA2F42152B43312B0040C9A9 /* level */ = {
 			isa = PBXGroup;
 			children = (
+				AA5681222BDAE7C300CC5A92 /* components */,
 				AA2F42162B4331570040C9A9 /* LevelScreen.swift */,
 				AA56811A2BD9922A00CC5A92 /* QuizLevelVM.swift */,
 			);
@@ -275,6 +278,14 @@
 			children = (
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		AA5681222BDAE7C300CC5A92 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				AA5681232BDAE7E000CC5A92 /* LevelScreenContents.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 		AA57BCB72B444AAB006CB058 /* feat-Quiz */ = {
@@ -638,6 +649,7 @@
 				AAA49CE42B41E2CB009050C6 /* QuizScreenView.swift in Sources */,
 				AA57BD052B4475E6006CB058 /* QuizRepo.swift in Sources */,
 				AAB922202BD3EB5900C68531 /* AuthRootView.swift in Sources */,
+				AA5681242BDAE7E000CC5A92 /* LevelScreenContents.swift in Sources */,
 				AA1D02652BD3DE7300BE784D /* AuthView.swift in Sources */,
 				AA1D024F2BD3CF4700BE784D /* AuthDataService.swift in Sources */,
 				AAB922362BD42FFB00C68531 /* QuizDataService.swift in Sources */,

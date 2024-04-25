@@ -13,7 +13,7 @@ struct LevelSelectButton: View {
     var level: Int
     var score: Int
     var rating: Int {
-        return Int(floor(Double(((score / 15) * 5))))
+        return Int(floor(Double((Float(score) / 15) * 5)))
     }
     
     var body: some View {
@@ -31,8 +31,8 @@ struct LevelSelectButton: View {
                 }
                 
                 ForEach(rating..<5, id: \.self){ level in
-                    Image(systemName: "star")
-                        .foregroundColor(Color("star"))
+                    Image(systemName: "star.fill")
+                        .foregroundColor(.gray)
                 }
                 
             }
@@ -43,6 +43,6 @@ struct LevelSelectButton: View {
 
 struct LevelSelectButton_Previews: PreviewProvider {
     static var previews: some View {
-        LevelSelectButton(level: 0, score: 5)
+        LevelSelectButton(level: 0, score: 7)
     }
 }
