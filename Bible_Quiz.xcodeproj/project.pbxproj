@@ -283,6 +283,8 @@
 		AA5681222BDAE7C300CC5A92 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				AA2F42182B4334010040C9A9 /* LevelSelectButton.swift */,
+				AA5681202BD9AF6700CC5A92 /* LevelSelectDisabled.swift */,
 				AA5681232BDAE7E000CC5A92 /* LevelScreenContents.swift */,
 			);
 			path = components;
@@ -472,8 +474,6 @@
 		AAFA11892BCC41D5009FD387 /* components */ = {
 			isa = PBXGroup;
 			children = (
-				AA2F42182B4334010040C9A9 /* LevelSelectButton.swift */,
-				AA5681202BD9AF6700CC5A92 /* LevelSelectDisabled.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
