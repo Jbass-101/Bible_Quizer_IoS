@@ -51,7 +51,7 @@ import Foundation
     
     func getUserData() async throws {
         print("Getting User Data")
-        let result = try await QuizDataService.shared.getAllQuestions(level:1)
+        let result = try await QuizDataService.shared.getAllQuestions(level: 1)
         print("This is the result: \(result)")
         
     }
