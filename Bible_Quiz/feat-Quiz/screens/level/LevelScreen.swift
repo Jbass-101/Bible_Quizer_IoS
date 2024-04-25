@@ -22,38 +22,7 @@ struct LevelScreen: View {
         
         ZStack {
             
-            VStack {
-                
-                    ScrollView{
-                        LazyVGrid(columns: columns){
-                            
-                            
-                            ForEach(0..<vm.levelUnlocked.count, id: \.self){ level in
-                                
-                                NavigationLink(destination: Text("Hello"), label: {LevelSelectButton(level: level, disabled: false) })
-                            }
-                            
-                            
-                            ForEach(vm.levelUnlocked.count..<20, id: \.self){ level in
-                                
-                                LevelSelectDisabled()
-                            }
-                            
-                            
-                        }
-                    }
-                    
-                    Button(action: {self.btnDisabled.toggle()}, label: {
-                        Text("Toggle Disable")
-                    })
-                    
-    //                NavigationLink(destination: QuizScreenView(vm: vm,question: vm.questions[vm.currentQuestion]), label: {Text("Go to Questions")})
-                    
-                    BibleQuizButton(title: "Home", onClick: {
-                        popScreen()
-                    })
-                }
-                .padding()
+            LevelScreenContents(score: vm.levelUnlocked)
                 .disabled(vm.isLoading)
             
             .navigationBarBackButtonHidden()
@@ -75,10 +44,6 @@ struct LevelScreen: View {
                     popScreen()
                 }
             }
-            
-            
-        
-        
         }
     }
 }
