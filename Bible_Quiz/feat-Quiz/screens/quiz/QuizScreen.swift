@@ -36,7 +36,7 @@ struct QuizScreen: View {
                     uiState: vm.uiState,
                     onNext: {vm.nextQuestion()},
                 answerQuestion: {a, b in},
-                    showHint: {}
+                    showHint: {vm.showHint()}
 //                    ,
 //                    timer: Timer.publish(every: 1, on: .main, in: .common).autoconnect()
                 )

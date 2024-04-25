@@ -34,7 +34,6 @@ struct QuizUiState {
     
     //private set means only vm can change the value
     @Published private (set) var questions = Quiz.mockData
-    @Published private (set) var currentQuestion = 0
     
     func getQuestions(level: Int) async {
         do{
@@ -52,6 +51,14 @@ struct QuizUiState {
     func nextQuestion(){
         if(self.uiState.currentQuestion < 14){
             self.uiState.currentQuestion += 1
+            self.uiState.showHint = false
+        }
+    }
+    
+    func showHint(){
+        if(self.uiState.hints > 0 && self.uiState.showHint == false){
+            self.uiState.hints -= 1
+            self.uiState.showHint = true
         }
     }
     

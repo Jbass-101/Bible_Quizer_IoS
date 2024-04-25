@@ -39,7 +39,7 @@ struct QuizScreenContents: View {
                     Spacer()
                     Text("Question: \(uiState.currentQuestion + 1)/15 ")
                     Spacer()
-                    Text("Hints : 5")
+                    Text("Hints : \(uiState.hints)")
                 }
                 
                 HStack{
@@ -67,7 +67,7 @@ struct QuizScreenContents: View {
                 
                 HStack{
                     
-                    Button(action: {}){
+                    Button(action: {showHint()}){
                         Image(systemName: "questionmark.app")
                         Text("Show Hint")
                     }
@@ -82,6 +82,7 @@ struct QuizScreenContents: View {
                     
                     
                     Text(quiz.hint)
+                        .opacity(uiState.showHint == true ? 1 : 0)
                     
                 }
                 
