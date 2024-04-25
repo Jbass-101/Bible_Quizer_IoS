@@ -14,12 +14,27 @@ struct LevelSelectButton: View {
     
     
     var body: some View {
-        
-        Text("Level \(level + 1)")
-            .foregroundColor(Color("onPrimary"))
-            .frame(maxWidth: .infinity,minHeight:50)
-            .background(disabled ? .gray : Color("primary"))
-            .cornerRadius(10)
+        VStack{
+            Text("Level \(level + 1)")
+                .foregroundColor(Color("onPrimary"))
+                .frame(maxWidth: .infinity,minHeight:50)
+                .background(Color("primary"))
+                .cornerRadius(10)
+            HStack{
+                
+                ForEach(0..<3, id: \.self){ level in
+                    Image(systemName: "star.fill")
+                        .foregroundColor(Color("star"))
+                }
+                
+                ForEach(3..<5, id: \.self){ level in
+                    Image(systemName: "star")
+                        .foregroundColor(Color("star"))
+                }
+                
+            }
+            .offset(x: 0, y:-14)
+        }
     }
 }
 
