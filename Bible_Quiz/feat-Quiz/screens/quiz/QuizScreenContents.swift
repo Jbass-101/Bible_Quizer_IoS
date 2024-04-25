@@ -21,7 +21,7 @@ struct QuizScreenContents: View {
     var onNext: () -> Void
     var answerQuestion: (_ ans: String, _ option: String) -> Void
     var showHint: () -> Void
-    var updateTimer: () -> Void
+//    var updateTimer: () -> Void
 //    var timer: Publishers.Autoconnect<Timer.TimerPublisher>
     
     
@@ -133,8 +133,8 @@ struct QuestionScreen_Previews: PreviewProvider {
                     uiState: quizUiState,
                     onNext: {},
                 answerQuestion: {a, b in},
-                    showHint: {},
-                    updateTimer: {self.quizUiState.progress -= 1}
+                    showHint: {}
+//                    updateTimer: {self.quizUiState.progress -= 1}
 //                    ,
 //                    timer: Timer.publish(every: 1, on: .main, in: .common).autoconnect()
                 )}

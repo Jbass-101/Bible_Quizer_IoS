@@ -31,7 +31,15 @@ struct QuizScreen: View {
                         }
                     }
             case .success:
-                Text(vm.uiState.questions.description)
+//                Text(vm.uiState.questions.description)
+                QuizScreenContents(
+                    uiState: vm.uiState,
+                    onNext: {vm.nextQuestion()},
+                answerQuestion: {a, b in},
+                    showHint: {}
+//                    ,
+//                    timer: Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+                )
 
             case .failure(let errorString):
                 BibleQuizError(errorString: errorString)

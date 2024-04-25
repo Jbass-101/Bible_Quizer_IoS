@@ -38,21 +38,20 @@ struct QuizUiState {
     
     func getQuestions(level: Int) async {
         do{
-            
             self.uiState.questions = try await QuizDataService.shared.getAllQuestions(level: level)
-            print("This is the result: \(self.uiState.questions)")
+//            print("This is the result: \(self.uiState.questions)")
             self.state = .success
             
         }catch{
-            print("This is the error: \(error.localizedDescription)")
+//            print("This is the error: \(error.localizedDescription)")
             self.state = .failure(error.localizedDescription)
         }
         
     }
     
     func nextQuestion(){
-        if(currentQuestion < 14){
-            currentQuestion += 1
+        if(self.uiState.currentQuestion < 14){
+            self.uiState.currentQuestion += 1
         }
     }
     
