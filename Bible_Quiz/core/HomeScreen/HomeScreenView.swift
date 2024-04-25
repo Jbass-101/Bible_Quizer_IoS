@@ -24,7 +24,11 @@ struct HomeScreenView: View {
                 
                 VStack(spacing: 25){
                     
-                    NavigationLink("Start", value: MainDestination.quizGraph)
+                    NavigationLink("Start"){
+                        LevelScreen()
+                    }
+                    
+//                    NavigationLink("Start", value: MainDestination.quizGraph)
                     
 //                    NavigationLink(destination: QuizNavGraph()){
 //                        BibleQuizButtonText(title: "Start")
