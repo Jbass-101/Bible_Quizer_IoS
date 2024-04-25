@@ -15,24 +15,14 @@ final class QuizDataService {
     
     private let db = Firestore.firestore()
     
-    func getAllQuestions() async throws -> (quiz: [Quiz], error: (any Error)?){
+    func getAllQuestions(level: Int) async throws -> [Quiz] {
         var questions : [Quiz] = []
         
-        do{
-            let snapshots = try await db.collection("Questions").document("Level").collection("level_1").getDocuments()
-            
-            for document in snapshots.documents {
-                questions.append(try document.data(as: Quiz.self))
-            }
-            print("No Error Found??")
-            return (quiz: questions.shuffled(), error: nil)
-            
-        }catch{
-            print("This is an error!!!")
-            
-            return (quiz: [], error: error)
-            
+        let snapshots = try await db.collection("Questions").document("Level").collection("level_\(level)").getDocuments()
+        
+        for document in snapshots.documents {
+            questions.append(try document.data(as: Quiz.self))
         }
-
+        return questions.shuffled()
     }
 }
