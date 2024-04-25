@@ -10,42 +10,31 @@ import SwiftUI
 
 struct QuizScreen: View {
     
-    @Binding var path: NavigationPath
-    @EnvironmentObject var router: QuizNavRouter
-    @StateObject private var vm: QuizVM = QuizVM()
-    @State private var currentUser: UserModel?
+    var quizLevel: Int
     
-//    init(level: Int) {
-//        self.level = level
-//    }
+    @StateObject private var vm: QuizVM = QuizVM()
+    
+    
     
     var body: some View {
         
-        VStack{
+        ZStack{
+            
+            
             switch vm.state{
-            case .idle: Text("Idle State. . . . . . ")
-                Color.clear.onAppear {
-                    Task {
-                        
-                        currentUser.self = await vm.getAuthUser()
-                        
-                    }
-            }
-
-            case .loading:
-                ProgressView()
-                Text("Loading. . . . . .")
-            case .success:
                 
-                ProgressView()
-                    .onAppear {
-                    path.append(QuizDestination.level)
-            }
+            case .loading:
+                BibleQuizLoading()
+                    .onAppear{
+                        Task{
+                            await vm.getQuestions(level:quizLevel)
+                        }
+                    }
+            case .success:
+                Text(vm.uiState.questions.description)
 
-
-
-            case .failure(_):
-                Text("We have an error sir")
+            case .failure(let errorString):
+                BibleQuizError(errorString: errorString)
             }
         }
         .navigationTitle("Quiz Root View")
@@ -69,7 +58,7 @@ struct QuizScreen: View {
 
 struct QuizScreen_Previews: PreviewProvider {
     static var previews: some View {
-        QuizScreen(path: .constant(NavigationPath()))
+        QuizScreen(quizLevel: 1)
     }
 }
 

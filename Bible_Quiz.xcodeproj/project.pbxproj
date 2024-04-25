@@ -50,7 +50,7 @@
 		AA9AE75F2B42FB1400F81931 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9AE75E2B42FB1400F81931 /* BackgroundView.swift */; };
 		AA9E9A622BD6CA01003EA02E /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9E9A612BD6CA01003EA02E /* AppError.swift */; };
 		AAA49C602B419962009050C6 /* BibleQuizButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA49C5F2B419962009050C6 /* BibleQuizButton.swift */; };
-		AAA49CE42B41E2CB009050C6 /* QuizScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA49CE32B41E2CB009050C6 /* QuizScreenView.swift */; };
+		AAA49CE42B41E2CB009050C6 /* QuizScreenContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA49CE32B41E2CB009050C6 /* QuizScreenContents.swift */; };
 		AAB922202BD3EB5900C68531 /* AuthRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB9221F2BD3EB5900C68531 /* AuthRootView.swift */; };
 		AAB922252BD3EEB600C68531 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB922242BD3EEB600C68531 /* SettingsView.swift */; };
 		AAB922282BD400B400C68531 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AAB922272BD400B400C68531 /* FirebaseFirestore */; };
@@ -117,7 +117,7 @@
 		AA9AE75E2B42FB1400F81931 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		AA9E9A612BD6CA01003EA02E /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		AAA49C5F2B419962009050C6 /* BibleQuizButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleQuizButton.swift; sourceTree = "<group>"; };
-		AAA49CE32B41E2CB009050C6 /* QuizScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScreenView.swift; sourceTree = "<group>"; };
+		AAA49CE32B41E2CB009050C6 /* QuizScreenContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScreenContents.swift; sourceTree = "<group>"; };
 		AAB0404C2B40BCDF0001F3E5 /* Bible-Quiz-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Bible-Quiz-Info.plist"; sourceTree = SOURCE_ROOT; };
 		AAB9221F2BD3EB5900C68531 /* AuthRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRootView.swift; sourceTree = "<group>"; };
 		AAB922242BD3EEB600C68531 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -314,7 +314,6 @@
 		AA57BD022B4474BA006CB058 /* screens */ = {
 			isa = PBXGroup;
 			children = (
-				AA57BCB52B44354B006CB058 /* QuizVM.swift */,
 				AAFA11892BCC41D5009FD387 /* components */,
 				AA2F42152B43312B0040C9A9 /* level */,
 				AAA49CE22B41E15A009050C6 /* quiz */,
@@ -432,7 +431,8 @@
 		AAA49CE22B41E15A009050C6 /* quiz */ = {
 			isa = PBXGroup;
 			children = (
-				AAA49CE32B41E2CB009050C6 /* QuizScreenView.swift */,
+				AA57BCB52B44354B006CB058 /* QuizVM.swift */,
+				AAA49CE32B41E2CB009050C6 /* QuizScreenContents.swift */,
 				AAFA118A2BCC433A009FD387 /* QuizScreen.swift */,
 			);
 			path = quiz;
@@ -646,7 +646,7 @@
 				AA56811F2BD9A89900CC5A92 /* BibleQuizError.swift in Sources */,
 				AA2F42192B4334010040C9A9 /* LevelSelectButton.swift in Sources */,
 				AAB9222E2BD403CF00C68531 /* ProfileView.swift in Sources */,
-				AAA49CE42B41E2CB009050C6 /* QuizScreenView.swift in Sources */,
+				AAA49CE42B41E2CB009050C6 /* QuizScreenContents.swift in Sources */,
 				AA57BD052B4475E6006CB058 /* QuizRepo.swift in Sources */,
 				AAB922202BD3EB5900C68531 /* AuthRootView.swift in Sources */,
 				AA5681242BDAE7E000CC5A92 /* LevelScreenContents.swift in Sources */,

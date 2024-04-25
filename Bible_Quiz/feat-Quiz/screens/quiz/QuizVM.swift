@@ -22,43 +22,30 @@ struct QuizUiState {
 
 @MainActor class QuizVM: ObservableObject {
     
-    
-    
-    
     enum State {
-        case idle
         case loading
         case success
-        case failure(Error)
+        case failure(String)
     }
     
     
-    @Published private (set) var state = State.idle
+    @Published private (set) var state = State.loading
     @Published private (set) var uiState: QuizUiState = QuizUiState()
     
     //private set means only vm can change the value
     @Published private (set) var questions = Quiz.mockData
     @Published private (set) var currentQuestion = 0
     
-    
-    
-    
-    func getAuthUser() async ->  UserModel? {
-        state = State.loading
+    func getQuestions(level: Int) async {
         do{
-//            state = .idle
-            let user =  try AuthDataService.shared.getAuthUser()
             
-            let userData = try await UserDataService.shared.getUserData(userID: user.id)
-            
-            
-            state = State.success
-            return userData
-            
+            self.uiState.questions = try await QuizDataService.shared.getAllQuestions(level: level)
+            print("This is the result: \(self.uiState.questions)")
+            self.state = .success
             
         }catch{
-            state = State.failure(error)
-            return nil
+            print("This is the error: \(error.localizedDescription)")
+            self.state = .failure(error.localizedDescription)
         }
         
     }

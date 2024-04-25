@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct QuizScreenView: View {
+struct QuizScreenContents: View {
     
     @Environment(\.dismiss) private var popScreen
     @State private var showConfirmationDialog = false
@@ -129,7 +129,7 @@ struct QuestionScreen_Previews: PreviewProvider {
     static var quizUiState = QuizUiState(questions: quiz, currentQuestion: 0)
     static var previews: some View {
         //        QuizScreenView(quiz: quiz)
-                QuizScreenView(
+                QuizScreenContents(
                     uiState: quizUiState,
                     onNext: {},
                 answerQuestion: {a, b in},
