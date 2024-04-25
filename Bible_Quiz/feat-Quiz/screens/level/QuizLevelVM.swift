@@ -16,11 +16,10 @@ import Foundation
         case failure(String)
     }
     
-
     
     @Published private (set) var state = State.loading
     @Published private (set) var isLoading = true
-    @Published private (set) var levelUnlocked: [Int] = [5,7,9]
+    @Published private (set) var levelUnlocked: [Int] = []
     
     func getUserData() async {
         do{
