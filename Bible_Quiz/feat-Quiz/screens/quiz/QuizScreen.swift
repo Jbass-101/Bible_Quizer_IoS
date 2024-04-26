@@ -35,8 +35,8 @@ struct QuizScreen: View {
                 QuizScreenContents(
                     uiState: vm.uiState,
                     onNext: {vm.nextQuestion()},
-                answerQuestion: {a, b in},
-                    showHint: {vm.showHint()}
+                    showHint: {vm.showHint()},
+                    onAnswer: {i in vm.onAnswer(isCorrect: i)}
 //                    ,
 //                    timer: Timer.publish(every: 1, on: .main, in: .common).autoconnect()
                 )

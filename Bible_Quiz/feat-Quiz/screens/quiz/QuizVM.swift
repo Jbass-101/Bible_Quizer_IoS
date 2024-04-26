@@ -52,6 +52,7 @@ struct QuizUiState {
         if(self.uiState.currentQuestion < 14){
             self.uiState.currentQuestion += 1
             self.uiState.showHint = false
+            self.uiState.hasAnswered = false
         }
     }
     
@@ -60,6 +61,14 @@ struct QuizUiState {
             self.uiState.hints -= 1
             self.uiState.showHint = true
         }
+    }
+    
+    func onAnswer(isCorrect: Bool){
+        self.uiState.hasAnswered = true
+        if(isCorrect){
+            self.uiState.currentScore += 1
+        }
+        
     }
     
 }

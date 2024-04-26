@@ -19,8 +19,8 @@ struct QuizScreenContents: View {
     
     var uiState: QuizUiState
     var onNext: () -> Void
-    var answerQuestion: (_ ans: String, _ option: String) -> Void
     var showHint: () -> Void
+    var onAnswer: (Bool) -> Void
 //    var updateTimer: () -> Void
 //    var timer: Publishers.Autoconnect<Timer.TimerPublisher>
     
@@ -92,11 +92,10 @@ struct QuizScreenContents: View {
                     
                     ForEach(quiz.options, id :\.self){option in
                         
-                        BibleQuizButton(title: option, onClick: {})
-                        
+                        QuizAnswerButton(option: option, answer: quiz.answer, hasAnswered: uiState.hasAnswered) { i in
+                            onAnswer(i)
+                        }
                     }
-                    
-                    
                 }
                 
                 Spacer()
@@ -133,8 +132,8 @@ struct QuestionScreen_Previews: PreviewProvider {
                 QuizScreenContents(
                     uiState: quizUiState,
                     onNext: {},
-                answerQuestion: {a, b in},
-                    showHint: {}
+                    showHint: {},
+                    onAnswer:{i in}
 //                    updateTimer: {self.quizUiState.progress -= 1}
 //                    ,
 //                    timer: Timer.publish(every: 1, on: .main, in: .common).autoconnect()
