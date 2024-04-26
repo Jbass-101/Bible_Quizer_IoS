@@ -65,6 +65,7 @@ struct QuizUiState {
     
     func onAnswer(isCorrect: Bool){
         self.uiState.hasAnswered = true
+        self.uiState.showHint = true
         if(isCorrect){
             self.uiState.currentScore += 1
         }

@@ -35,7 +35,9 @@ struct QuizAnswerButton: View {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke())
                 .foregroundColor(Color(hasAnswered == true ? (isCorrect == true ? "correctAnswer" : "incorrectAnswer" ) : "primary" ))
-        })
+        }
+        )
+        .disabled(hasAnswered)
     }
 }
 
