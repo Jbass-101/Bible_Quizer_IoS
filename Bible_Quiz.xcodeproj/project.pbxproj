@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA0165402BDB120C00E570CE /* QuizAnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01653F2BDB120C00E570CE /* QuizAnswerButton.swift */; };
 		AA16C4F62AF41E0500384E03 /* Bible_QuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16C4F52AF41E0500384E03 /* Bible_QuizApp.swift */; };
 		AA16C4F82AF41E0500384E03 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16C4F72AF41E0500384E03 /* HomeScreenView.swift */; };
 		AA16C4FA2AF41E0800384E03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA16C4F92AF41E0800384E03 /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA01653F2BDB120C00E570CE /* QuizAnswerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnswerButton.swift; sourceTree = "<group>"; };
 		AA16C4F22AF41E0500384E03 /* Bible_Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bible_Quiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA16C4F52AF41E0500384E03 /* Bible_QuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bible_QuizApp.swift; sourceTree = "<group>"; };
 		AA16C4F72AF41E0500384E03 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
@@ -157,6 +159,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA01653E2BDB113300E570CE /* components */ = {
+			isa = PBXGroup;
+			children = (
+				AAA49CE32B41E2CB009050C6 /* QuizScreenContents.swift */,
+				AA01653F2BDB120C00E570CE /* QuizAnswerButton.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		AA16C4E92AF41E0500384E03 = {
 			isa = PBXGroup;
 			children = (
@@ -431,8 +442,8 @@
 		AAA49CE22B41E15A009050C6 /* quiz */ = {
 			isa = PBXGroup;
 			children = (
+				AA01653E2BDB113300E570CE /* components */,
 				AA57BCB52B44354B006CB058 /* QuizVM.swift */,
-				AAA49CE32B41E2CB009050C6 /* QuizScreenContents.swift */,
 				AAFA118A2BCC433A009FD387 /* QuizScreen.swift */,
 			);
 			path = quiz;
@@ -651,6 +662,7 @@
 				AAB922202BD3EB5900C68531 /* AuthRootView.swift in Sources */,
 				AA5681242BDAE7E000CC5A92 /* LevelScreenContents.swift in Sources */,
 				AA1D02652BD3DE7300BE784D /* AuthView.swift in Sources */,
+				AA0165402BDB120C00E570CE /* QuizAnswerButton.swift in Sources */,
 				AA1D024F2BD3CF4700BE784D /* AuthDataService.swift in Sources */,
 				AAB922362BD42FFB00C68531 /* QuizDataService.swift in Sources */,
 				AAB922252BD3EEB600C68531 /* SettingsView.swift in Sources */,
