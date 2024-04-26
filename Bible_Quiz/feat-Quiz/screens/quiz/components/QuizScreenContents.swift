@@ -34,7 +34,7 @@ struct QuizScreenContents: View {
             
             VStack{
                 HStack{
-                    Text("Score: 0")
+                    Text("Score: \(uiState.currentScore)")
                         .font(.body)
                     Spacer()
                     Text("Question: \(uiState.currentQuestion + 1)/15 ")
