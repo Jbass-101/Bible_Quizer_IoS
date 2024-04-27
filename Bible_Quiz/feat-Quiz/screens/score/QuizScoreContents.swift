@@ -19,13 +19,13 @@ struct QuizScoreContents: View {
             Spacer()
             VStack {
                 Text("Previous Score")
-                Text("5")
+                Text("\(previousScore)")
                     .font(
                         .largeTitle
                         .weight(.bold)
                     )
                 Text("Your Score")
-                Text("5")
+                Text("\(currentScore)")
                     .font(
                         .largeTitle
                         .weight(.bold)
@@ -34,7 +34,7 @@ struct QuizScoreContents: View {
             Spacer()
             
             VStack{
-                Text("Sore at least 9 to unlock the next level")
+                Text(currentScore > 8 ? currentScore > previousScore ? "New High Score!": "New Level Unlocked!" : "Sore at least 9 to unlock the next level")
             }
             Spacer()
             
@@ -58,7 +58,13 @@ struct QuizScoreContents: View {
 struct QuizScoreScreen_Previews: PreviewProvider {
     static var previews: some View {
         QuizScoreContents(
-            currentScore: 5, previousScore: 4
+            currentScore: 0, previousScore: 2
+        )
+        QuizScoreContents(
+            currentScore: 9, previousScore: 8
+        )
+        QuizScoreContents(
+            currentScore: 10, previousScore: 8
         )
     }
 }

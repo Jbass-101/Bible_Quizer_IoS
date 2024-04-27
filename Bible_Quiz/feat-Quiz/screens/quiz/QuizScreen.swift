@@ -27,7 +27,7 @@ struct QuizScreen: View {
                 BibleQuizLoading()
                     .onAppear{
                         Task{
-                            await vm.getQuestions(level:quizLevel)
+                            await vm.getQuestions(level:quizLevel,previousScore: previousScore)
                         }
                     }
             case .success:

@@ -11,6 +11,7 @@ import Foundation
 struct QuizUiState {
     var questions: [Quiz] = []
     var currentQuestion: Int = 0
+    var previousScore: Int = 0
     var currentScore: Int = 0
     var hasAnswered: Bool = false
     var showHint: Bool = false
@@ -35,8 +36,9 @@ struct QuizUiState {
     //private set means only vm can change the value
     @Published private (set) var questions = Quiz.mockData
     
-    func getQuestions(level: Int) async {
+    func getQuestions(level: Int, previousScore: Int) async {
         do{
+            self.uiState.previousScore = previousScore
             self.uiState.questions = try await QuizDataService.shared.getAllQuestions(level: level)
 //            print("This is the result: \(self.uiState.questions)")
             self.state = .success
