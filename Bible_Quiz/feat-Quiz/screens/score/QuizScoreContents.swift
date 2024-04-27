@@ -7,9 +7,12 @@
 
 import SwiftUI
 
-struct QuizScoreScreen: View {
+struct QuizScoreContents: View {
     
     @Environment(\.dismiss) private var popScreen
+    
+    var currentScore: Int
+    var previousScore: Int
     
     var body: some View {
         VStack {
@@ -54,6 +57,8 @@ struct QuizScoreScreen: View {
 
 struct QuizScoreScreen_Previews: PreviewProvider {
     static var previews: some View {
-        QuizScoreScreen()
+        QuizScoreContents(
+            currentScore: 5, previousScore: 4
+        )
     }
 }

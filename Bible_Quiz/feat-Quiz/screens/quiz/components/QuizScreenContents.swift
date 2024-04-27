@@ -11,6 +11,7 @@ struct QuizScreenContents: View {
     
     @Environment(\.dismiss) private var popScreen
     @State private var showConfirmationDialog = false
+    @State private var showScore = false
     
     
 //    @ObservedObject var vm : QuizVM
@@ -111,7 +112,8 @@ struct QuizScreenContents: View {
                     Spacer()
                     BibleQuizButton(
                         title: uiState.currentQuestion < 14 ? "Next" : "Finish" , maxWidth: 150,
-                        onClick: onNext)
+                        onClick:{ uiState.currentQuestion < 14 ? onNext() : showScore.toggle()}
+                    )
                 }
             }
             .padding()
@@ -119,6 +121,9 @@ struct QuizScreenContents: View {
             .toolbar(.hidden)
         }
         .navigationBarBackButtonHidden()
+        .fullScreenCover(isPresented: $showScore){
+            QuizScoreContents(currentScore: uiState.currentScore, previousScore: 0)
+        }
     }
 }
 

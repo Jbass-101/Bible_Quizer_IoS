@@ -14,7 +14,7 @@ public struct Quiz: Codable {
     let answer: String
     let hint: String
     let book: String
-    let options: [String]
+    var options: [String]
     
 }
 

@@ -20,19 +20,14 @@ struct LevelScreenContents: View {
                 ScrollView{
                     LazyVGrid(columns: columns){
                         
-                        
                         ForEach(0..<score.count, id: \.self){ level in
                             
-                            NavigationLink(destination: QuizScreen(quizLevel: level), label: {LevelSelectButton(level: level, score: score[level]) })
+                            NavigationLink(destination: QuizScreen(quizLevel: level, previousScore: score[level]), label: {LevelSelectButton(level: level, score: score[level]) })
                         }
-                        
-                        
                         ForEach(score.count..<20, id: \.self){ level in
                             
                             LevelSelectDisabled()
                         }
-                        
-                        
                     }
                 }
                 

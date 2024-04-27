@@ -11,6 +11,7 @@ import SwiftUI
 struct QuizScreen: View {
     
     var quizLevel: Int
+    var previousScore: Int
     
     @StateObject private var vm: QuizVM = QuizVM()
     
@@ -19,8 +20,7 @@ struct QuizScreen: View {
     var body: some View {
         
         ZStack{
-            
-            
+    
             switch vm.state{
                 
             case .loading:
@@ -66,7 +66,7 @@ struct QuizScreen: View {
 
 struct QuizScreen_Previews: PreviewProvider {
     static var previews: some View {
-        QuizScreen(quizLevel: 1)
+        QuizScreen(quizLevel: 1,previousScore: 6)
     }
 }
 
