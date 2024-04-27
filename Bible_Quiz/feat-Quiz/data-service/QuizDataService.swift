@@ -23,6 +23,11 @@ final class QuizDataService {
         for document in snapshots.documents {
             questions.append(try document.data(as: Quiz.self))
         }
+        
+        for (i,_) in questions.enumerated(){
+            questions[i].options = questions[i].options.shuffled()
+        }
+        
         return questions.shuffled()
     }
 }
