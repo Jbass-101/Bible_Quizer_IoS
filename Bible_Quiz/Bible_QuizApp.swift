@@ -13,7 +13,7 @@ import FirebaseFirestore
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     
-    private let emulatorIP = "172.20.10.2"
+    private let emulatorIP = "192.168."
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     FirebaseApp.configure()
