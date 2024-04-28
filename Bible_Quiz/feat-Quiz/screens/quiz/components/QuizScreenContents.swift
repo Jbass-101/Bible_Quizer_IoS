@@ -24,6 +24,8 @@ struct QuizScreenContents: View {
     var onAnswer: (Bool) -> Void
 //    var updateTimer: () -> Void
 //    var timer: Publishers.Autoconnect<Timer.TimerPublisher>
+    @State private var timeRemaining = 60
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     
     
@@ -31,7 +33,6 @@ struct QuizScreenContents: View {
         
         let quiz = uiState.questions[uiState.currentQuestion]
         
-        NavigationStack {
             
             VStack{
                 HStack{
@@ -46,11 +47,12 @@ struct QuizScreenContents: View {
                 HStack{
                     Image(systemName: "clock")
                     Spacer()
-                    ProgressView(value: 50, total: 100)
+                    QuizProgressBar(progress: CGFloat(timeRemaining) / 60)
                     Spacer()
-                    Text("60")
+                    Text("\(timeRemaining)")
                     
                 }
+                
                 
                 
                 Text(quiz.question)
@@ -119,7 +121,17 @@ struct QuizScreenContents: View {
             .padding()
             .navigationTitle("Question Screen")
             .toolbar(.hidden)
-        }
+            .onReceive(timer){ timer in
+                if timeRemaining > 0 && !showConfirmationDialog == true{
+                    timeRemaining -= 1
+                }
+                
+                if timeRemaining == 0 {
+                    onAnswer(false)
+                }
+                
+            }
+        
         .navigationBarBackButtonHidden()
         .fullScreenCover(isPresented: $showScore){
             QuizScoreContents(currentScore: uiState.currentScore, previousScore: uiState.previousScore)
