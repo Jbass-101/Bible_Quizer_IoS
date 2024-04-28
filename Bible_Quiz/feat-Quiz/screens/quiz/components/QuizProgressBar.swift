@@ -22,7 +22,7 @@ struct QuizProgressBar: View {
           Rectangle()
             .frame(width: progress * 300, height: 5)
             .foregroundColor(.green)
-            .animation(.easeInOut(duration: 1), value: progress)
+            .animation(.easeInOut(duration: 2), value: progress)
             
         }
     }

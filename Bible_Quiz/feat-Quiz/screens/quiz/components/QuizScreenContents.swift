@@ -14,20 +14,13 @@ struct QuizScreenContents: View {
     @State private var showScore = false
     
     
-//    @ObservedObject var vm : QuizVM
-//    var question: Quiz
-    
-    
     var uiState: QuizUiState
     var onNext: () -> Void
     var showHint: () -> Void
     var onAnswer: (Bool) -> Void
-//    var updateTimer: () -> Void
-//    var timer: Publishers.Autoconnect<Timer.TimerPublisher>
-    @State private var timeRemaining = 60
+    var onTick: () -> Void
+    
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
-    
     
     var body: some View {
         
@@ -47,25 +40,20 @@ struct QuizScreenContents: View {
                 HStack{
                     Image(systemName: "clock")
                     Spacer()
-                    QuizProgressBar(progress: CGFloat(timeRemaining) / 60)
+                    QuizProgressBar(progress: CGFloat(uiState.progress) / 60)
                     Spacer()
-                    Text("\(timeRemaining)")
+                    Text("\(uiState.progress)")
                     
                 }
                 
-                
-                
                 Text(quiz.question)
+                    .padding()
                     .font(.title3)
                     .foregroundColor(Color("onContainer"))
                     .frame(maxWidth: .infinity, maxHeight: 250)
                     .background(Color("container"))
                     .cornerRadius(10)
                     
-                
-                
-                
-                
                 Spacer()
                 
                 HStack{
@@ -81,9 +69,6 @@ struct QuizScreenContents: View {
                     
                     Spacer()
                     
-                    
-                    
-                    
                     Text(quiz.hint)
                         .opacity(uiState.showHint == true ? 1 : 0)
                     
@@ -97,6 +82,7 @@ struct QuizScreenContents: View {
                         
                         QuizAnswerButton(option: option, answer: quiz.answer, hasAnswered: uiState.hasAnswered) { i in
                             onAnswer(i)
+                            
                         }
                     }
                 }
@@ -122,14 +108,13 @@ struct QuizScreenContents: View {
             .navigationTitle("Question Screen")
             .toolbar(.hidden)
             .onReceive(timer){ timer in
-                if timeRemaining > 0 && !showConfirmationDialog == true{
-                    timeRemaining -= 1
+                if uiState.progress > 0 && !showConfirmationDialog == true && uiState.hasAnswered == false  {
+                   onTick()
                 }
                 
-                if timeRemaining == 0 {
+                if uiState.progress == 0 {
                     onAnswer(false)
                 }
-                
             }
         
         .navigationBarBackButtonHidden()
@@ -145,14 +130,11 @@ struct QuestionScreen_Previews: PreviewProvider {
     
     static var quizUiState = QuizUiState(questions: quiz, currentQuestion: 0)
     static var previews: some View {
-        //        QuizScreenView(quiz: quiz)
                 QuizScreenContents(
                     uiState: quizUiState,
                     onNext: {},
                     showHint: {},
-                    onAnswer:{i in}
-//                    updateTimer: {self.quizUiState.progress -= 1}
-//                    ,
-//                    timer: Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+                    onAnswer:{i in},
+                    onTick: {}
                 )}
 }

@@ -16,7 +16,7 @@ struct QuizUiState {
     var hasAnswered: Bool = false
     var showHint: Bool = false
     var hints: Int = 5
-    var progress: Float = 60.0
+    var progress: Int = 60
 }
 
 
@@ -35,6 +35,9 @@ struct QuizUiState {
     
     //private set means only vm can change the value
     @Published private (set) var questions = Quiz.mockData
+    @Published private (set) var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
+    
     
     func getQuestions(level: Int, previousScore: Int) async {
         do{
@@ -55,6 +58,8 @@ struct QuizUiState {
             self.uiState.currentQuestion += 1
             self.uiState.showHint = false
             self.uiState.hasAnswered = false
+            self.uiState.progress = 60
+            self.uiState.hasAnswered = false
         }
     }
     
@@ -68,9 +73,15 @@ struct QuizUiState {
     func onAnswer(isCorrect: Bool){
         self.uiState.hasAnswered = true
         self.uiState.showHint = true
+        self.uiState.hasAnswered = true
         if(isCorrect){
             self.uiState.currentScore += 1
         }
+        
+    }
+    
+    func onQuizTick(){
+        self.uiState.progress -= 1
         
     }
     

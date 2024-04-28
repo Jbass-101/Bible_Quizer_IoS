@@ -36,7 +36,8 @@ struct QuizScreen: View {
                     uiState: vm.uiState,
                     onNext: {vm.nextQuestion()},
                     showHint: {vm.showHint()},
-                    onAnswer: {i in vm.onAnswer(isCorrect: i)}
+                    onAnswer: {i in vm.onAnswer(isCorrect: i)},
+                    onTick: {vm.onQuizTick()}
 //                    ,
 //                    timer: Timer.publish(every: 1, on: .main, in: .common).autoconnect()
                 )
@@ -45,7 +46,8 @@ struct QuizScreen: View {
                 BibleQuizError(errorString: errorString)
             }
         }
-        .navigationTitle("Quiz Root View")
+//        .navigationTitle("Quiz Root View")
+        .navigationBarBackButtonHidden()
         
         
         
