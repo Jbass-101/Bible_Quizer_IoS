@@ -30,4 +30,13 @@ final class QuizDataService {
         
         return questions.shuffled()
     }
+    
+    func updateScore(level: Int, score: Int) async throws {
+        let user = try  AuthDataService.shared.getAuthUser().id
+        var userData = try await db.collection("Users").document(user).getDocument(as: UserModel.self).quizScore
+        
+        userData[level] = score
+        
+        try await db.collection("Users").document(user).updateData(["quizScore":userData])
+    }
 }

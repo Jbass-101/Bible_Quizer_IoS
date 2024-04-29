@@ -17,6 +17,7 @@ struct QuizUiState {
     var showHint: Bool = false
     var hints: Int = 5
     var progress: Int = 60
+    var currentLevel: Int = 0
 }
 
 
@@ -41,6 +42,7 @@ struct QuizUiState {
     
     func getQuestions(level: Int, previousScore: Int) async {
         do{
+            self.uiState.currentLevel = level
             self.uiState.previousScore = previousScore
             self.uiState.questions = try await QuizDataService.shared.getAllQuestions(level: level)
 //            print("This is the result: \(self.uiState.questions)")
@@ -49,6 +51,18 @@ struct QuizUiState {
         }catch{
 //            print("This is the error: \(error.localizedDescription)")
             self.state = .failure(error.localizedDescription)
+        }
+    }
+    
+    func updateScore()async {
+        do{
+            if(self.uiState.previousScore > self.uiState.currentScore){
+                try await QuizDataService.shared.updateScore(level: self.uiState.currentLevel, score: self.uiState.currentScore)
+            }
+            
+        }catch {
+            self.state = .failure(error.localizedDescription)
+            
         }
         
     }
@@ -60,6 +74,11 @@ struct QuizUiState {
             self.uiState.hasAnswered = false
             self.uiState.progress = 60
             self.uiState.hasAnswered = false
+        }
+        
+        if(self.uiState.currentQuestion >= 14){
+            
+            
         }
     }
     

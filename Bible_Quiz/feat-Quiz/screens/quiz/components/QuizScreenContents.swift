@@ -119,7 +119,7 @@ struct QuizScreenContents: View {
         
         .navigationBarBackButtonHidden()
         .fullScreenCover(isPresented: $showScore){
-            QuizScoreContents(currentScore: uiState.currentScore, previousScore: uiState.previousScore)
+            QuizScoreContents(uiState: uiState)
         }
     }
 }

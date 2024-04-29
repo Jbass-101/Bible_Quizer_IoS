@@ -31,37 +31,19 @@ struct QuizScreen: View {
                         }
                     }
             case .success:
-//                Text(vm.uiState.questions.description)
                 QuizScreenContents(
                     uiState: vm.uiState,
                     onNext: {vm.nextQuestion()},
                     showHint: {vm.showHint()},
                     onAnswer: {i in vm.onAnswer(isCorrect: i)},
                     onTick: {vm.onQuizTick()}
-//                    ,
-//                    timer: Timer.publish(every: 1, on: .main, in: .common).autoconnect()
                 )
 
             case .failure(let errorString):
                 BibleQuizError(errorString: errorString)
             }
         }
-//        .navigationTitle("Quiz Root View")
         .navigationBarBackButtonHidden()
-        
-        
-        
-        
-        
-//        List {
-//            Button("Quiz"){
-//                path.append(QuizDestination.quiz)
-//            }
-//            NavigationLink("Quiz", value: QuizDestination.quiz)
-//            NavigationLink("Levels", value: QuizDestination.level)
-//            NavigationLink("Score", value: QuizDestination.score)
-//        }
-        
         
     }
 }

@@ -11,15 +11,14 @@ struct QuizScoreContents: View {
     
     @Environment(\.dismiss) private var popScreen
     
-    var currentScore: Int
-    var previousScore: Int
+    var uiState: QuizUiState
     
     var body: some View {
         VStack {
             Spacer()
             VStack {
                 Text("Previous Score")
-                Text("\(previousScore)")
+                Text("\(uiState.previousScore)")
                     .font(
                         .largeTitle
                         .weight(.bold)
@@ -29,7 +28,7 @@ struct QuizScoreContents: View {
                 
                 
                 Text("Your Score")
-                Text("\(currentScore)")
+                Text("\(uiState.currentScore)")
                     .font(
                         .largeTitle
                         .weight(.bold)
@@ -38,10 +37,10 @@ struct QuizScoreContents: View {
             Spacer()
             
             VStack{
-                Text(currentScore > 8
-                     ? currentScore > previousScore && previousScore > 8
+                Text(uiState.currentScore > 8
+                     ? uiState.currentScore > uiState.previousScore && uiState.previousScore > 8
                         ? "New High Score"
-                        : currentScore <= previousScore
+                     : uiState.currentScore <= uiState.previousScore
                             ? "You can do better"
                             : "New Level Unlocked!"
                      : "Sore at least 9 to unlock the next level")
@@ -67,20 +66,17 @@ struct QuizScoreContents: View {
 
 struct QuizScoreScreen_Previews: PreviewProvider {
     static var previews: some View {
-        QuizScoreContents(
-            currentScore: 0, previousScore: 2
+        QuizScoreContents(uiState: QuizUiState( previousScore: 2, currentScore: 0
+                
+            )
         )
-        QuizScoreContents(
-            currentScore: 9, previousScore: 8
+        QuizScoreContents(uiState: QuizUiState(previousScore: 8, currentScore: 9)
         )
-        QuizScoreContents(
-            currentScore: 10, previousScore: 2
+        QuizScoreContents(uiState: QuizUiState(previousScore: 2, currentScore: 10)
         )
-        QuizScoreContents(
-            currentScore: 10, previousScore: 10
+        QuizScoreContents(uiState: QuizUiState(previousScore: 10, currentScore: 10)
         )
-        QuizScoreContents(
-            currentScore: 9, previousScore: 10
+        QuizScoreContents(uiState: QuizUiState(previousScore: 10, currentScore: 9)
         )
     }
 }
