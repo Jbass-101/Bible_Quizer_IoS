@@ -92,7 +92,7 @@ struct QuizScreenContents: View {
                 
                 HStack{
                     
-                    BibleQuizButton(title: "Quit", maxWidth: 150, onClick: {showConfirmationDialog.toggle()})
+                    BibleQuizButton(title: "Quit", onClick: {showConfirmationDialog.toggle()})
                         .alert("Quit", isPresented: $showConfirmationDialog, actions: {
                             Button(action: {}, label: {Text("Continue")})
                             Button(action: {popScreen()}, label: {Text("Quit Quiz")})
@@ -100,7 +100,7 @@ struct QuizScreenContents: View {
                         }, message: {Text("Are you sure?")})
                     Spacer()
                     BibleQuizButton(
-                        title: uiState.currentQuestion < 14 ? "Next" : "Finish" , maxWidth: 150,
+                        title: uiState.currentQuestion < 14 ? "Next" : "Finish",
                         onClick:{ uiState.currentQuestion < 14 ? onNext() : showScore.toggle()}
                     )
                 }

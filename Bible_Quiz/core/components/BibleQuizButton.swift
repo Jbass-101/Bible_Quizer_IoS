@@ -10,7 +10,6 @@ import SwiftUI
 struct BibleQuizButton: View {
     
     var title: String
-    var maxWidth: CGFloat = 0
     var onClick: () -> Void
     
     
@@ -22,7 +21,7 @@ struct BibleQuizButton: View {
         }label: {
             Text(title)
                 .foregroundColor(Color("onBackground"))
-                .frame(maxWidth: maxWidth == 0 ? .infinity : maxWidth ,maxHeight: 50)
+                .frame(maxWidth: .infinity,maxHeight: 50)
                 .background(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke()
