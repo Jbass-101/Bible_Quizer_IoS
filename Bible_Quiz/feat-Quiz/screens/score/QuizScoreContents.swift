@@ -10,6 +10,7 @@ import SwiftUI
 struct QuizScoreContents: View {
     
     @Environment(\.dismiss) private var popScreen
+    @EnvironmentObject var nav: QuizNavRouter
     
     var uiState: QuizUiState
     
@@ -48,14 +49,14 @@ struct QuizScoreContents: View {
             Spacer()
             
             VStack {
-                BibleQuizButton(title: "Retry Level") {
-                    popScreen()
-                }
+//                BibleQuizButton(title: "Retry Level") {
+//                    popScreen()
+//                }
                 BibleQuizButton(title: "Select Level") {
-                    popScreen()
+                    nav.navigate(to: QuizDestination.level)
                 }
                 BibleQuizButton(title: "Home") {
-                    popScreen()
+                    nav.navigateToRoot()
                 }
             }
             Spacer()
