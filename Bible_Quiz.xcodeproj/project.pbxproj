@@ -87,7 +87,7 @@
 /* Begin PBXFileReference section */
 		AA01653F2BDB120C00E570CE /* QuizAnswerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnswerButton.swift; sourceTree = "<group>"; };
 		AA04171E2BDE8B440068D22A /* QuizProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizProgressBar.swift; sourceTree = "<group>"; };
-		AA16C4F22AF41E0500384E03 /* Bible_Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bible_Quiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA16C4F22AF41E0500384E03 /* Bible Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bible Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA16C4F52AF41E0500384E03 /* Bible_QuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bible_QuizApp.swift; sourceTree = "<group>"; };
 		AA16C4F72AF41E0500384E03 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		AA16C4F92AF41E0800384E03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 		AA16C4F32AF41E0500384E03 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AA16C4F22AF41E0500384E03 /* Bible_Quiz.app */,
+				AA16C4F22AF41E0500384E03 /* Bible Quiz.app */,
 				AA16C5022AF41E0900384E03 /* Bible_QuizTests.xctest */,
 				AA16C50C2AF41E0900384E03 /* Bible_QuizUITests.xctest */,
 			);
@@ -506,9 +506,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AA16C4F12AF41E0500384E03 /* Bible_Quiz */ = {
+		AA16C4F12AF41E0500384E03 /* Bible Quiz */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA16C5162AF41E0900384E03 /* Build configuration list for PBXNativeTarget "Bible_Quiz" */;
+			buildConfigurationList = AA16C5162AF41E0900384E03 /* Build configuration list for PBXNativeTarget "Bible Quiz" */;
 			buildPhases = (
 				AA16C4EE2AF41E0500384E03 /* Sources */,
 				AA16C4EF2AF41E0500384E03 /* Frameworks */,
@@ -518,7 +518,7 @@
 			);
 			dependencies = (
 			);
-			name = Bible_Quiz;
+			name = "Bible Quiz";
 			packageProductDependencies = (
 				AA1D02462BD3CD6700BE784D /* FirebaseAnalytics */,
 				AA1D02482BD3CD6700BE784D /* FirebaseAnalyticsSwift */,
@@ -527,7 +527,7 @@
 				AAB922292BD400B400C68531 /* FirebaseFirestoreSwift */,
 			);
 			productName = Bible_Quiz;
-			productReference = AA16C4F22AF41E0500384E03 /* Bible_Quiz.app */;
+			productReference = AA16C4F22AF41E0500384E03 /* Bible Quiz.app */;
 			productType = "com.apple.product-type.application";
 		};
 		AA16C5012AF41E0900384E03 /* Bible_QuizTests */ = {
@@ -605,7 +605,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AA16C4F12AF41E0500384E03 /* Bible_Quiz */,
+				AA16C4F12AF41E0500384E03 /* Bible Quiz */,
 				AA16C5012AF41E0900384E03 /* Bible_QuizTests */,
 				AA16C50B2AF41E0900384E03 /* Bible_QuizUITests */,
 			);
@@ -716,12 +716,12 @@
 /* Begin PBXTargetDependency section */
 		AA16C5042AF41E0900384E03 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AA16C4F12AF41E0500384E03 /* Bible_Quiz */;
+			target = AA16C4F12AF41E0500384E03 /* Bible Quiz */;
 			targetProxy = AA16C5032AF41E0900384E03 /* PBXContainerItemProxy */;
 		};
 		AA16C50E2AF41E0900384E03 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AA16C4F12AF41E0500384E03 /* Bible_Quiz */;
+			target = AA16C4F12AF41E0500384E03 /* Bible Quiz */;
 			targetProxy = AA16C50D2AF41E0900384E03 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -857,8 +857,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -866,9 +866,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.extrabrains.biblequiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -888,8 +891,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -897,9 +900,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.extrabrains.biblequiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1052,8 +1058,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1061,9 +1067,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.extrabrains.biblequiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Emulators;
 		};
@@ -1116,7 +1125,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA16C5162AF41E0900384E03 /* Build configuration list for PBXNativeTarget "Bible_Quiz" */ = {
+		AA16C5162AF41E0900384E03 /* Build configuration list for PBXNativeTarget "Bible Quiz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA16C5172AF41E0900384E03 /* Debug */,
