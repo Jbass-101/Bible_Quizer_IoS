@@ -40,14 +40,6 @@ struct HomeScreenView: View {
             .padding()
             .navigationTitle("Home Screen")
             .toolbar(.hidden)
-            .onAppear{
-                Task{
-                    
-                    try await AuthDataService.shared.signInAnon()
-                    
-                }
-                
-            }
         }
         
 }
