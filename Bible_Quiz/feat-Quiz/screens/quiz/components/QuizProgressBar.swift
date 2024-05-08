@@ -11,7 +11,7 @@ struct QuizProgressBar: View {
     
     var progress: CGFloat
     
-    let maxWidth = UIScreen.main.bounds.size.width * 0.6
+    let maxWidth = UIScreen.main.bounds.size.width * 0.7
     
     
     var body: some View {
