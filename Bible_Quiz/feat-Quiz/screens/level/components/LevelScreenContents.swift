@@ -17,7 +17,7 @@ struct LevelScreenContents: View {
     var body: some View {
         VStack {
             
-                ScrollView{
+            ScrollView(showsIndicators: false){
                     LazyVGrid(columns: columns){
                         
                         ForEach(0..<score.count, id: \.self){ level in

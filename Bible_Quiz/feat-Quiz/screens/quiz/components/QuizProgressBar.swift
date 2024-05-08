@@ -11,16 +11,18 @@ struct QuizProgressBar: View {
     
     var progress: CGFloat
     
+    let maxWidth = UIScreen.main.bounds.size.width * 0.6
+    
     
     var body: some View {
         ZStack(alignment: .leading) {
           Rectangle()
-            .frame(width: 300, height: 5)
+            .frame(width: maxWidth, height: 5)
             .opacity(0.3)
             .foregroundColor(.gray)
 
           Rectangle()
-            .frame(width: progress * 300, height: 5)
+                .frame(width: progress * maxWidth, height: 5)
             .foregroundColor(.green)
             .animation(.easeInOut(duration: 2), value: progress)
             

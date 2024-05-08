@@ -44,6 +44,7 @@ struct QuizScreenContents: View {
                     Spacer()
                     Text("\(uiState.progress)")
                     
+                    
                 }
                 
                 Text(quiz.question)
