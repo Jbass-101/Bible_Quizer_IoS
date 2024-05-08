@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeScreenView: View {
+    @EnvironmentObject var nav: QuizNavRouter
     var body: some View {
         
             
@@ -24,9 +25,14 @@ struct HomeScreenView: View {
                 
                 VStack(spacing: 25){
                     
-                    NavigationLink("Start"){
-                        LevelScreen()
-                    }
+                    BibleQuizButton(title: "Start", onClick: {
+                        nav.navigate(to: MainDestination.quizGraph)
+                        
+                    })
+                    
+//                    NavigationLink("Start"){
+//                        LevelScreen()
+//                    }
                     
 //                    NavigationLink("Start", value: MainDestination.quizGraph)
                     

@@ -17,37 +17,17 @@ public enum QuizDestination: Hashable {
 //        case bedroom(owner: String)
 }
 
-final class QuizNavRouter: ObservableObject {
-    
-    public enum Destination: Codable, Hashable {
-        case level
-        case quiz
-        case score
+
+
+public enum Destination: Codable, Hashable {
+    case level
+    case quiz
+    case score
 //        case bedroom(owner: String)
-    }
-    
-    @Published var navPath = NavigationPath()
-    
-    func navigate(to destination: Destination) {
-        navPath.append(destination)
-        
-    }
-    
-    func navigateBack() {
-        navPath.removeLast()
-    }
-    
-    func navigateToRoot() {
-        navPath.removeLast(navPath.count)
-    }
 }
 
 
 struct QuizNavGraph: View {
-    
-    
-    
-    @Binding var path: NavigationPath
     
     var body: some View {
         
@@ -71,6 +51,6 @@ struct QuizNavGraph: View {
 
 struct QuizNavGraph_Previews: PreviewProvider {
     static var previews: some View {
-        QuizNavGraph(path: .constant(NavigationPath()))
+        QuizNavGraph()
     }
 }
