@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct HomeScreenView: View {
-    @EnvironmentObject var nav: QuizNavRouter
     var body: some View {
         
-            
             VStack{
                 
                     Image("quizlogo")
@@ -25,36 +23,9 @@ struct HomeScreenView: View {
                 
                 VStack(spacing: 25){
                     
-                    BibleQuizButton(title: "Start", onClick: {
-                        nav.navigate(to: MainDestination.quizGraph)
-                        
-                    })
                     
-//                    NavigationLink("Start"){
-//                        LevelScreen()
-//                    }
+                    NavigationLink(destination: QuizNavGraph(), label: {BibleQuizButtonText(title: "Start")})
                     
-//                    NavigationLink("Start", value: MainDestination.quizGraph)
-                    
-//                    NavigationLink(destination: QuizNavGraph()){
-//                        BibleQuizButtonText(title: "Start")
-//                    }
-                    
-                    Button("Login Anon"){
-                        Task{
-                            
-                            try await AuthDataService.shared.signInAnon()
-                            
-                        }
-                    }
-                    Button("Sign Out User"){
-                        Task{
-                            
-                            try AuthDataService.shared.signOut()
-                            
-                        }
-                    }
-
                     
                     BibleQuizButton(title: "Quit") {
                         print("Quit App")
@@ -69,6 +40,14 @@ struct HomeScreenView: View {
             .padding()
             .navigationTitle("Home Screen")
             .toolbar(.hidden)
+            .onAppear{
+                Task{
+                    
+                    try await AuthDataService.shared.signInAnon()
+                    
+                }
+                
+            }
         }
         
 }
